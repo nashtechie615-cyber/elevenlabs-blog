@@ -1,0 +1,45 @@
+---
+title: "Flash vs Multilingual vs v3: Which ElevenLabs Model Wins Your Use Case"
+description: "Honest breakdown: Flash for sub-100ms agent latency, Multilingual v2 as the reliable workhorse, v3 for expressive long-form. When each is the right call and when switching costs more than it saves."
+pubDate: "Apr 18 2026"
+heroImage: "../../assets/eleven-v3-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Picking the wrong ElevenLabs model doesn't just affect audio quality — it can tank your latency, blow your budget, or leave you with a voice that sounds robotic at the exact moment it needs to sound human. The good news is that each model has a clear job. The confusion usually comes from treating them as interchangeable when they're not.
+
+
+<Video src="/resources/v3-logo-colourful.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Flash: Built for Speed, Not Showmanship](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Flash exists for one reason: getting audio back fast enough that a conversation feels real. If you're building a voice agent — customer support bots, outbound dialers, real-time assistants — latency is your primary constraint. Flash targets sub-100ms response times, which is the rough threshold where a pause stops feeling like thinking and starts feeling like lag.
+
+The tradeoff is expressiveness. Flash won't give you the emotional texture that long-form narration needs. It also has a narrower language footprint compared to Multilingual v2. But for agents, neither of those things matters much. You need consistency, speed, and a voice that doesn't sound mechanical under pressure. Flash delivers that.
+
+Where Flash fails: don't use it for audiobooks, explainer videos, or anything where the listener is sitting still and paying close attention. The model is optimized for throughput, not nuance.
+
+## [Multilingual v2: The Workhorse That Earns Its Name](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Multilingual v2 is the model most production teams should default to. It handles a broad range of languages with solid accent accuracy, it's stable, and it integrates cleanly with [ElevenLabs' voice cloning and dubbing workflows](https://try.elevenlabs.io/8jq9xhb1mno4). If you're localizing content across multiple markets, this is your starting point.
+
+It's not as fast as Flash and not as expressive as v3, but it sits in a useful middle ground. For podcasts, corporate training videos, e-learning platforms, and any multilingual product that needs consistent quality without hand-tuning every output, Multilingual v2 just works.
+
+Teams sometimes try to replace it with Flash to cut latency or v3 to improve expressiveness, then spend days tuning prompts to recover the consistency they had before. That's the switching cost nobody talks about.
+
+## [v3: Save It for When Emotion Is the Product](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Turbo v3 (and the standard v3 variant) is where ElevenLabs leans hardest into expressiveness. It handles emotional range, pacing shifts, and long-form coherence better than the other models. For audiobook narration, character voices in games, or high-end branded content where the voice itself is a selling point, v3 earns its place.
+
+The cost is latency and, depending on your usage tier, price per character. For anything interactive, v3 is the wrong tool. For anything where someone is going to sit with the audio for 20 minutes, it's probably the right one.
+
+One practical note: [voice consistency across long documents](https://try.elevenlabs.io/8jq9xhb1mno4) is where v3 shows its clearest advantage over the other models. If you've ever had a TTS model shift tone mid-chapter, v3 is worth testing specifically for that problem.
+
+## [Choosing Without Overthinking It](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Here's the short version. Real-time agent? Use Flash. Multilingual content at scale? Start with Multilingual v2 and only move if you hit a specific wall. Long-form narration or expressive character work? v3 is your model.
+
+Most teams don't need to switch models as often as they think. Pick the right one for your primary use case, get your voice and prompting dialed in, and treat switching as a last resort rather than a first response to problems.
+
+Ready to test these against your actual use case? [Start with a free ElevenLabs account](https://try.elevenlabs.io/8jq9xhb1mno4) and run the same script through all three. The difference will be obvious in the first 30 seconds.

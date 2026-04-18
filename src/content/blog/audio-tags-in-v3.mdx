@@ -1,0 +1,55 @@
+---
+title: "Audio Tags: The Inline Stage Directions That Let v3 Actually Act"
+description: "How audio tags work in Eleven v3 — whispers, shouts, laughter, pauses, emotional shifts — inline in your script. Worked examples showing the difference between plain and tagged input."
+pubDate: "Apr 18 2026"
+heroImage: "../../assets/eleven-v3-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Most text-to-speech systems read your words. They don't interpret them. You get consistent delivery, consistent tone, consistent nothing. ElevenLabs v3 changes that relationship with a feature called audio tags — inline markers you drop directly into your script that tell the model *how* to say something, not just *what* to say.
+
+
+<Video src="/resources/v3-logo-colourful.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What Audio Tags Actually Are](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Audio tags are short descriptive labels wrapped in brackets that sit inside your script text. They work like stage directions in a screenplay. A playwright doesn't just write dialogue — they write "quietly, to herself" or "breaking down" beside the line. Audio tags do the same job for v3.
+
+The tags cover a wide range of delivery styles. You can call for a whisper, a shout, laughter, a sob, a sigh, a pause, or a shift in emotional register. The model reads the tag, interprets the surrounding text through that lens, and adjusts its output accordingly. The tag itself doesn't appear in the final audio — it's instruction, not content.
+
+This matters because emotion in speech isn't just about word choice. It's about breath, pace, volume, and texture. A sentence delivered flatly and the same sentence delivered with hesitation are completely different communications. Plain prompting can nudge the model's baseline, but tags give you line-by-line control.
+
+## [Plain vs. Tagged: What the Difference Looks Like](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Here's a concrete example. Take this line:
+
+> I didn't think you'd actually come back.
+
+Without tags, v3 reads it at whatever emotional baseline the voice has been given. Maybe slightly serious. Functional, but flat.
+
+Now tag it:
+
+> [surprised, voice barely above a whisper] I didn't think you'd actually come back.
+
+The model now delivers that line with a hushed, caught-off-guard quality. The surprise isn't performed generically — it's filtered through the restraint of a near-whisper, which makes it feel more real.
+
+Another example. A character delivering bad news:
+
+> [heavy pause] We lost the signal about six hours ago. [voice tightening] There's nothing we can do from here.
+
+The pause lands before the gut-punch. The tightening voice carries the weight of someone trying to hold it together. That's performance, not just speech synthesis.
+
+You can also chain tags within a single passage to show emotional movement — someone starting a sentence calm and finishing it in frustration, or laughing before turning serious. V3 handles transitions between tagged states without jarring cuts.
+
+## [Where Tags Fit in a Real Workflow](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Audio tags are most useful anywhere delivery variance matters: character dialogue in games or audiobooks, documentary narration that needs tonal range, podcast intros that open with energy and shift into explanation, or training content that benefits from emphasis and pacing cues.
+
+They're also worth using when you're iterating. Instead of regenerating the same line ten times hoping to land on the right read, you describe what you want and the model executes it. That's a faster feedback loop and fewer wasted generations.
+
+The tags don't require special syntax knowledge. You write plain English inside the brackets — [laughing softly], [frustrated, clipped], [long pause], [whispered urgency]. The model is trained to interpret natural descriptive language, so you don't need to memorize a command set.
+
+What you do need is a clear picture of what the moment calls for. If you know the emotional truth of a line, you can write a tag that captures it. That's the skill — the tool handles the rest.
+
+If you want to test this yourself, [try v3 with audio tags here](https://try.elevenlabs.io/8jq9xhb1mno4) and see how quickly a tagged script outperforms a plain one.

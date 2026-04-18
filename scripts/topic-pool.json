@@ -41,7 +41,8 @@
       "angle": "Practical advice for recording the training sample: microphone choice, room treatment on a budget, script variety, how long the sample should be, and the three mistakes that produce robotic clones.",
       "hero": "voice-design-hero.png",
       "video": "spy-voice-design-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-18T21:03:55.961Z"
     },
     {
       "slug": "flash-vs-multilingual-vs-v3",
@@ -50,7 +51,8 @@
       "angle": "Honest breakdown: Flash for sub-100ms agent latency, Multilingual v2 as the reliable workhorse, v3 for expressive long-form. When each is the right call and when switching costs more than it saves.",
       "hero": "eleven-v3-hero.jpg",
       "video": "v3-logo-colourful.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-18T21:04:17.852Z"
     },
     {
       "slug": "audio-tags-in-v3",
@@ -59,7 +61,8 @@
       "angle": "How audio tags work in Eleven v3 — whispers, shouts, laughter, pauses, emotional shifts — inline in your script. Worked examples showing the difference between plain and tagged input.",
       "hero": "eleven-v3-hero.jpg",
       "video": "v3-logo-colourful.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-18T21:04:38.710Z"
     },
     {
       "slug": "build-voice-agent-customer-service",
