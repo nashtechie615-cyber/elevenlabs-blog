@@ -1,0 +1,38 @@
+---
+import { SITE_TITLE, AFFILIATE_URL } from '../consts';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => href === '/' ? path === '/' : path.startsWith(href);
+
+const links = [
+	{ href: '/', label: 'Home' },
+	{ href: '/blog', label: 'Blog' },
+	{ href: '/about', label: 'About' },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-line bg-white/80 backdrop-blur">
+	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+		<a href="/" class="text-lg font-bold tracking-tight text-ink">
+			{SITE_TITLE}
+		</a>
+		<div class="hidden items-center gap-8 md:flex">
+			{links.map((link) => (
+				<a
+					href={link.href}
+					class={`text-sm font-medium transition ${isActive(link.href) ? 'text-accent' : 'text-ink-soft hover:text-ink'}`}
+				>
+					{link.label}
+				</a>
+			))}
+		</div>
+		<a
+			href={AFFILIATE_URL}
+			target="_blank"
+			rel="noopener sponsored"
+			class="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink-soft"
+		>
+			Try ElevenLabs
+		</a>
+	</nav>
+</header>

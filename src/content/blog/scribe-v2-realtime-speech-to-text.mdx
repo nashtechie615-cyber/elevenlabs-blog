@@ -1,0 +1,34 @@
+---
+title: "Scribe v2 Realtime Drops Latency Below 150ms — And It Hears 90 Languages"
+description: "ElevenLabs' new real-time speech-to-text model is fast enough for live voice agents, accurate in noisy rooms, and ready for HIPAA workloads. Here's the practical rundown."
+pubDate: "Apr 18 2026"
+heroImage: "../../assets/scribe-realtime-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Real-time speech-to-text has been the quiet bottleneck in voice AI. You can generate an utterly convincing synthetic voice in 100ms, but if your transcription layer takes half a second to figure out what the customer just said, the whole conversation feels robotic. [ElevenLabs' new Scribe v2 Realtime](https://try.elevenlabs.io/8jq9xhb1mno4) closes that gap.
+
+## [The numbers that matter](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The headline figures are simple: transcription latency under 150 milliseconds, 93.5% accuracy averaged across 30 of the most widely spoken European and Asian languages, and coverage that stretches to roughly 90 languages overall via automatic language detection.
+
+That sub-150ms number is the important one. It's inside the window where a voice agent can interrupt naturally, handle turn-taking the way a human does, and avoid the awkward pause that gives away every earlier generation of automated phone system. The model also does negative-latency predictive text — it starts outputting what it thinks you'll say before you've finished saying it — which is where that aggressive response time comes from.
+
+<Video src="/resources/elevenlabs-lines-animated.mp4" caption="The audio-to-text pipeline that now runs under 150ms end to end." ratio="16/9" />
+
+## [Built for production, not benchmarks](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+What actually wins this tier of tool is its resilience to real-world audio. Scribe v2 Realtime holds accuracy through background noise, multiple speakers, and the compressed telephony codecs that plague contact center workloads. It handles PCM at 48kHz for studio pipelines and μ-law for the carrier-grade phone stack, and it maintains context across connection drops — so a momentary network blip doesn't reset the transcript in the middle of a customer's sentence.
+
+Language switching is rapid enough that a single conversation can move between English, Spanish, and French without manual configuration. For any business serving multilingual markets through a single support line, that alone justifies a migration.
+
+## [Compliance is finally boring](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The enterprise checklist reads like a procurement team's dream: SOC 2, ISO 27001, PCI DSS Level 1, HIPAA, and GDPR. Data residency can be pinned to the EU or India, and there's a zero-retention mode for scenarios where the transcript should never leave the processing window.
+
+## [Where to use it](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Three obvious targets: voice agents that need to feel indistinguishable from a human rep, live meeting captioning where the lag between speech and subtitle is the entire user experience, and accessibility tooling where every tenth of a second shows up in the reviews.
+
+The model is available now through the [ElevenLabs API](https://try.elevenlabs.io/8jq9xhb1mno4) and drops in natively to the Agents platform. If you're running any earlier STT, this is the upgrade that actually moves your demo closer to shipping.

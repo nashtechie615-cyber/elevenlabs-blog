@@ -1,0 +1,45 @@
+---
+title: "Eleven v3 Ships: The Voice Model That Finally Reads Numbers, Formulas, and URLs Correctly"
+description: "ElevenLabs graduated its most expressive text-to-speech model out of alpha. Here's what changed, what broke less, and whether it's worth switching to."
+pubDate: "Apr 18 2026"
+heroImage: "../../assets/eleven-v3-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+After nearly eight months in alpha, [Eleven v3 is now generally available](https://try.elevenlabs.io/8jq9xhb1mno4) across every ElevenLabs surface — the web studio, the API, and every downstream integration. For anyone building voice products, dubbing workflows, or AI-narrated content, this is the model you'll want to default to.
+
+The short version: it sounds noticeably better, and it finally stops mangling the things voice models have always mangled.
+
+<Video src="/resources/v3-logo-colourful.mp4" caption="Eleven v3 — the model powering the new generation of expressive synthetic voices." ratio="1/1" />
+
+## [Why this release matters](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Most text-to-speech models fall apart the moment your script includes something other than plain prose. Phone numbers get read as astronomically large integers. Chemical formulas turn into gibberish. URLs come out as a stream of consonants. You notice the problem the instant you try to narrate a real-world document — a product spec, a customer support script, a medical report.
+
+Eleven v3 was rebuilt specifically to fix that class of problem. Across 27 benchmark categories spanning 8 languages, the team reports a roughly 68% drop in interpretation errors compared to the alpha — an overall error rate down from 15.3% to 4.9%.
+
+The category-by-category numbers are where it gets genuinely impressive:
+
+- **Phone numbers:** 99% fewer errors. A string like `+49 170 9876543` is now read as individual digits instead of one enormous number.
+- **Chemical formulas:** dropped from 45.6% to 0.6% error rate.
+- **ISBNs:** perfect. Zero errors in testing.
+- **URLs and emails:** 91% reduction.
+- **Mathematical expressions:** 71% improvement.
+- **License plates, coordinates, sports scores:** all substantially better.
+
+If your application touches any of these — and most serious applications do — that's the difference between a demo that works and a product you can ship.
+
+## [Stability and expressiveness](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Raw accuracy isn't the only thing that changed. In head-to-head listening tests, users preferred the general-availability version of v3 over the alpha 72% of the time. That tracks with what we've heard in our own tests: the voices sound more grounded, less prone to the drift you occasionally got in long-form reads, and better at holding a consistent emotional tone across a paragraph.
+
+For creative use cases — audiobooks, character dialogue, narrative podcasts — the expressive control that made v3 interesting in alpha is still there, just more reliable.
+
+## [Who should switch today](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Honestly: almost everyone. If you've been running Eleven Multilingual v2 for production voiceover work, this is a drop-in quality upgrade. If you're running Flash for latency-sensitive agent workloads, keep Flash — but test v3 for anything where accuracy on structured text matters more than milliseconds.
+
+The model is live right now on every plan. You can [spin up an account and try it in the studio](https://try.elevenlabs.io/8jq9xhb1mno4) without touching a line of code, or wire it into an existing pipeline through the same API endpoint you were already using.
+
+Eight months of refinement, and the benchmark numbers to back it up. This is the one to switch to.

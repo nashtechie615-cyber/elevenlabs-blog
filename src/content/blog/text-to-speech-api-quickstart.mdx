@@ -1,0 +1,66 @@
+---
+title: "Ship a Text-to-Speech Prototype Before Lunch: The 10-Line ElevenLabs Quickstart"
+description: "Practical walkthrough of getting from zero to a working TTS call using the ElevenLabs API. Cover auth, picking a voice ID, the POST /v1/text-to-speech endpoint, streaming vs file output, and one…"
+pubDate: "Apr 18 2026"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+If you've been putting off adding voice to your app because it sounds complicated, stop waiting. The ElevenLabs API is straightforward enough that you can go from a blank file to audio playing on your machine in under an hour — realistically, well under.
+
+Here's a minimal walkthrough. Python is used in the examples, but the concepts map directly to any HTTP client.
+
+
+<Video src="/resources/v3-logo-colourful.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Get Your API Key and Pick a Voice](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Sign up at [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and grab your API key from the profile settings page. Store it as an environment variable — `ELEVENLABS_API_KEY` is a reasonable name — rather than pasting it directly into your code.
+
+Next, pick a voice. Every voice on the platform has a unique ID, which is just a string you pass in the URL. You can browse the voice library in the dashboard, or hit the `GET /v1/voices` endpoint to pull the full list programmatically. Copy the `voice_id` value for whichever voice you want. Something like `21m00Tcm4TlvDq8ikWAM` for Rachel, one of the default options.
+
+## [The Core API Call](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The endpoint you care about is `POST /v1/text-to-speech/VOICE_ID`. The request body is JSON with at minimum a `text` field. Here's what a working call looks like:
+
+```python
+import os
+import requests
+
+api_key = os.environ["ELEVENLABS_API_KEY"]
+voice_id = "21m00Tcm4TlvDq8ikWAM"
+
+response = requests.post(
+    f"https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID",
+    headers=["xi-api-key": api_key, "Content-Type": "application/json"],
+    json=["text": "Hello. Your prototype is working.", "model_id": "eleven_monolingual_v1"],
+)
+
+with open("output.mp3", "wb") as f:
+    f.write(response.content)
+```
+
+Note: replace the bracketed header and JSON notation above with normal dict syntax in your actual file — the square brackets here just avoid curly-brace characters that can confuse certain templating systems.
+
+That's it. Run it, open `output.mp3`, and you have speech.
+
+## [Streaming vs. File Output](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The approach above downloads the full audio before doing anything with it. That's fine for short clips, but if you're building something interactive — a voice assistant, a reading app — you'll want to stream instead.
+
+Append `/stream` to the endpoint path: `POST /v1/text-to-speech/VOICE_ID/stream`. Then use `stream=True` in your requests call and iterate over the response in chunks. You can pipe those chunks directly to an audio player or a WebSocket connection as they arrive. Latency drops noticeably. For any user-facing feature, streaming is the right default.
+
+The JSON body stays the same either way. The only change is the URL and how you handle the response.
+
+## [The Free Tier Gotcha](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Free accounts have a monthly character limit. That limit resets each month, but it's easy to burn through it quickly if you're running tests in a loop or generating long passages repeatedly. There's no mid-request warning — the API will return an error once you've hit the ceiling.
+
+Two things help here. First, keep your test strings short. "Hello world" costs 11 characters; a full paragraph costs a few hundred. Second, cache your outputs locally. If you're iterating on code that doesn't change the text, write to a file once and replay it rather than making a fresh API call every run.
+
+When you're ready to move past the free tier, [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) offers paid plans that scale with usage and unlock additional features like higher-quality models and more concurrent requests.
+
+---
+
+That's the full picture for a basic prototype. Auth, voice selection, one POST request, and a local MP3. From there you can wire it into a web app, a CLI tool, or whatever you're building. If you haven't set up an account yet, head to [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and get started — the free tier is enough to validate whether voice belongs in your product.

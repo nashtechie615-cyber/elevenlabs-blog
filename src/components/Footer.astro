@@ -1,0 +1,43 @@
+---
+import { SITE_TITLE, AFFILIATE_URL } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line bg-white">
+	<div class="mx-auto max-w-6xl px-6 py-12">
+		<div class="grid gap-8 md:grid-cols-3">
+			<div>
+				<p class="text-base font-bold text-ink">{SITE_TITLE}</p>
+				<p class="mt-2 text-sm text-muted">
+					Independent coverage of ElevenLabs — voice AI, music, and audio tools for creators and developers.
+				</p>
+			</div>
+			<div>
+				<p class="text-sm font-semibold text-ink">Explore</p>
+				<ul class="mt-3 space-y-2 text-sm">
+					<li><a href="/" class="text-muted transition hover:text-ink">Home</a></li>
+					<li><a href="/blog" class="text-muted transition hover:text-ink">Blog</a></li>
+					<li><a href="/about" class="text-muted transition hover:text-ink">About</a></li>
+					<li><a href="/rss.xml" class="text-muted transition hover:text-ink">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div>
+				<p class="text-sm font-semibold text-ink">Get started</p>
+				<p class="mt-3 text-sm text-muted">
+					Try the platform everything on this site is written about.
+				</p>
+				<a
+					href={AFFILIATE_URL}
+					target="_blank"
+					rel="noopener sponsored"
+					class="mt-3 inline-block rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent-dark"
+				>
+					Launch ElevenLabs
+				</a>
+			</div>
+		</div>
+		<div class="mt-10 border-t border-line pt-6 text-xs text-muted">
+			&copy; {year} {SITE_TITLE}. This site contains affiliate links.
+		</div>
+	</div>
+</footer>

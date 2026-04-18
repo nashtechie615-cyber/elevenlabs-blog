@@ -1,0 +1,434 @@
+{
+  "_meta": {
+    "notes": "Each topic gets used once. The generator marks 'status':'published' and stamps 'publishedAt'. When only a handful of 'queued' entries remain, add more (or have Claude regenerate the pool). Hero images live in src/assets/. Video clips live in public/resources/.",
+    "lastRefreshed": "2026-04-18"
+  },
+  "heroes": [
+    "eleven-v3-hero.jpg",
+    "voice-design-hero.png",
+    "scribe-realtime-hero.jpg",
+    "enterprise-local-hero.jpg",
+    "audiobooks-hero.jpg",
+    "agents-hero.jpg",
+    "blog-placeholder-1.jpg",
+    "blog-placeholder-2.jpg",
+    "blog-placeholder-3.jpg",
+    "blog-placeholder-4.jpg",
+    "blog-placeholder-5.jpg"
+  ],
+  "videos": [
+    "v3-logo-colourful.mp4",
+    "v3-logo-black.mp4",
+    "elevenlabs-lines-animated.mp4",
+    "spy-voice-design-demo.mp4",
+    "audiobooks-demo.mp4"
+  ],
+  "topics": [
+    {
+      "slug": "text-to-speech-api-quickstart",
+      "category": "tutorial",
+      "title": "Ship a Text-to-Speech Prototype Before Lunch: The 10-Line ElevenLabs Quickstart",
+      "angle": "Practical walkthrough of getting from zero to a working TTS call using the ElevenLabs API. Cover auth, picking a voice ID, the POST /v1/text-to-speech endpoint, streaming vs file output, and one gotcha about rate limits on the free tier.",
+      "hero": "blog-placeholder-1.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "published",
+      "publishedAt": "2026-04-18T19:57:11.977Z"
+    },
+    {
+      "slug": "voice-cloning-best-practices",
+      "category": "tutorial",
+      "title": "The Voice Clone That Actually Sounds Like You: A Recording Checklist",
+      "angle": "Practical advice for recording the training sample: microphone choice, room treatment on a budget, script variety, how long the sample should be, and the three mistakes that produce robotic clones.",
+      "hero": "voice-design-hero.png",
+      "video": "spy-voice-design-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "flash-vs-multilingual-vs-v3",
+      "category": "comparison",
+      "title": "Flash vs Multilingual vs v3: Which ElevenLabs Model Wins Your Use Case",
+      "angle": "Honest breakdown: Flash for sub-100ms agent latency, Multilingual v2 as the reliable workhorse, v3 for expressive long-form. When each is the right call and when switching costs more than it saves.",
+      "hero": "eleven-v3-hero.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "audio-tags-in-v3",
+      "category": "feature-deep-dive",
+      "title": "Audio Tags: The Inline Stage Directions That Let v3 Actually Act",
+      "angle": "How audio tags work in Eleven v3 — whispers, shouts, laughter, pauses, emotional shifts — inline in your script. Worked examples showing the difference between plain and tagged input.",
+      "hero": "eleven-v3-hero.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "build-voice-agent-customer-service",
+      "category": "tutorial",
+      "title": "Build a Customer Service Voice Agent in One Afternoon",
+      "angle": "End-to-end: pick a voice, wire up the knowledge base (RAG), connect to a phone number via SIP trunk, add turn-taking, test it with a real call. Highlight the Agents platform.",
+      "hero": "agents-hero.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "dubbing-studio-workflow",
+      "category": "tutorial",
+      "title": "Dub a YouTube Channel Into 12 Languages Without Losing Your Voice",
+      "angle": "How Dubbing Studio preserves the creator's voice identity across languages. Upload, auto-translate, voice-match, review, export. Cost and time per minute of output.",
+      "hero": "blog-placeholder-2.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "sound-effects-from-a-prompt",
+      "category": "feature-deep-dive",
+      "title": "Generate Any Sound Effect From a Sentence — The SFX Model You'll Use Daily",
+      "angle": "Text-to-SFX as a creative unlock. Examples: 'a rusty gate slamming in the wind,' 'a crowd gasping,' 'a dragon exhaling.' How it slots into game dev, podcast, and video workflows.",
+      "hero": "blog-placeholder-3.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "music-generation-for-podcasters",
+      "category": "use-case",
+      "title": "Stop Paying for Royalty-Free Loops: Generate Your Own Podcast Music",
+      "angle": "Eleven Music for podcast intros, transitions, outro stingers. Prompting tips, genre tags, how long you can go, licensing clarity.",
+      "hero": "blog-placeholder-4.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-isolator-for-video-editors",
+      "category": "feature-deep-dive",
+      "title": "Voice Isolator: The Click That Saves Every Field Recording",
+      "angle": "Removing wind, HVAC hum, café chatter from dialogue tracks. Comparison with traditional noise reduction. Real scenarios — docs, podcasts, shot-on-phone interviews.",
+      "hero": "blog-placeholder-5.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "conversational-ai-2-overview",
+      "category": "product-launch",
+      "title": "Conversational AI 2.0: Why Voice Agents Finally Stopped Sounding Like Voice Agents",
+      "angle": "The jump from scripted IVRs to v2 agents — turn-taking models, interruption handling, backchanneling, tool use, the expressive mode. Why enterprises are re-evaluating their support stack.",
+      "hero": "agents-hero.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "agents-workflows-multi-step",
+      "category": "feature-deep-dive",
+      "title": "Agent Workflows: Hand-Designing the Conversations That Actually Close",
+      "angle": "Visual workflow builder for multi-step agent flows. Branching logic, business rules, database hooks. A worked example: a loan prequalification flow.",
+      "hero": "agents-hero.jpg",
+      "video": "v3-logo-black.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-library-curation",
+      "category": "tutorial",
+      "title": "How to Pick a Voice From 10,000 Options Without Losing Your Afternoon",
+      "angle": "Strategic search of the Voice Library — tagging, gender, accent, age filters, sample lines to audition against, saving shortlists. Specific picks for audiobook, game, and ad use cases.",
+      "hero": "voice-design-hero.png",
+      "video": "spy-voice-design-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "audio-native-embed-for-writers",
+      "category": "use-case",
+      "title": "Add a 'Listen to this article' Button to Your Blog in 5 Minutes",
+      "angle": "Audio Native embed for writers and publishers. How it crawls your site, updates when you edit, attributes voices, handles paywalls.",
+      "hero": "blog-placeholder-1.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "speech-to-text-meeting-transcription",
+      "category": "use-case",
+      "title": "Your Meetings Don't Need Another Bot — They Need Scribe",
+      "angle": "Using Scribe for meeting transcription without the bot-joins-your-Zoom creepiness. Local recording, upload workflow, speaker diarization accuracy.",
+      "hero": "scribe-realtime-hero.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "game-dev-character-voices",
+      "category": "use-case",
+      "title": "Every NPC in Your Indie Game Can Now Have a Unique Voice",
+      "angle": "Voice Design for game devs. Generating, saving, and consistently recalling character voices. Pipeline for hundreds of lines per character. Licensing and character IP clarity.",
+      "hero": "blog-placeholder-2.jpg",
+      "video": "spy-voice-design-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "localization-without-a-translation-agency",
+      "category": "use-case",
+      "title": "Localize Your Product Demo Into 30 Languages Over the Weekend",
+      "angle": "Workflow: script → translate → regenerate voiceover with matched voice identity → sync video. Where human review still matters.",
+      "hero": "blog-placeholder-3.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "studio-3-long-form-production",
+      "category": "feature-deep-dive",
+      "title": "ElevenLabs Studio 3.0: The Long-Form Editor That Finally Feels Like a DAW",
+      "angle": "Studio 3.0 UX for long-form audio — chapter structure, timeline scrubbing, pronunciation overrides, regenerate-just-this-sentence. What changed from 2.x.",
+      "hero": "blog-placeholder-4.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "eleven-reader-app",
+      "category": "product-launch",
+      "title": "ElevenReader Turns Any PDF Into an Audiobook — And It's Free",
+      "angle": "The ElevenReader consumer app. Import any PDF, article, or ebook and listen on your commute. Voice selection, speed controls, bookmarking.",
+      "hero": "blog-placeholder-5.jpg",
+      "video": "audiobooks-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "gen-fm-podcast-from-url",
+      "category": "feature-deep-dive",
+      "title": "GenFM: Paste a URL, Get a Two-Host Podcast Discussing It",
+      "angle": "How GenFM inside ElevenReader turns any article into a conversational podcast with two AI hosts. Use cases for researchers, students, and people with a long commute.",
+      "hero": "blog-placeholder-1.jpg",
+      "video": "audiobooks-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "pronunciation-dictionaries",
+      "category": "tutorial",
+      "title": "Teach ElevenLabs to Pronounce Your Brand Name Correctly Forever",
+      "angle": "Pronunciation dictionaries — phonetic overrides, IPA vs alias, per-project vs account-wide. Fix the one word that keeps breaking your demo.",
+      "hero": "blog-placeholder-2.jpg",
+      "video": "v3-logo-black.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-changer-live-streaming",
+      "category": "use-case",
+      "title": "Voice Changer Is What Twitch Has Been Waiting For",
+      "angle": "Using Voice Changer for real-time voice transformation in streams and calls. Latency, setup, voice library, moral/ethical use cases.",
+      "hero": "blog-placeholder-3.jpg",
+      "video": "spy-voice-design-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "api-rate-limits-and-scaling",
+      "category": "tutorial",
+      "title": "Rate Limits, Concurrency, and Queueing: Scaling ElevenLabs in Production",
+      "angle": "Developer-focused: understanding the API quotas, using websockets for streaming, backoff strategies, when to upgrade tier, multi-key fan-out patterns.",
+      "hero": "blog-placeholder-4.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-for-accessibility",
+      "category": "use-case",
+      "title": "Reading Disabilities Just Got a Whole Lot Less Disabling",
+      "angle": "ElevenReader and voice cloning as accessibility tools for dyslexia, ALS, visual impairment, and low-literacy contexts. Real stories, practical setup.",
+      "hero": "blog-placeholder-5.jpg",
+      "video": "audiobooks-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "governance-and-ai-provenance",
+      "category": "industry",
+      "title": "How ElevenLabs Marks Every Clip So You Can Prove It's AI",
+      "angle": "Provenance, watermarking, AI Speech Classifier, AI transparency policy. Why this matters for publishers, platforms, and newsrooms.",
+      "hero": "blog-placeholder-1.jpg",
+      "video": "v3-logo-black.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-for-educators",
+      "category": "use-case",
+      "title": "Teachers Are Quietly Using ElevenLabs to Narrate Everything",
+      "angle": "How K-12 and higher-ed teachers use ElevenLabs for narrating slides, creating study guides, flipping classrooms. Cost tier that works.",
+      "hero": "blog-placeholder-2.jpg",
+      "video": "audiobooks-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-for-health-providers",
+      "category": "use-case",
+      "title": "Patient Reminder Calls That Don't Sound Like Robots",
+      "angle": "Healthcare use case: automated appointment reminders, medication coaching, triage agents. HIPAA compliance story. Where human handoff still matters.",
+      "hero": "agents-hero.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-for-financial-services",
+      "category": "use-case",
+      "title": "The Compliance-Friendly Way to Use AI Voice in Banking",
+      "angle": "Financial services voice use cases — ID verification, collections, notifications. PCI DSS, data residency, the Eleven enterprise deployment options.",
+      "hero": "enterprise-local-hero.jpg",
+      "video": "v3-logo-black.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "character-design-for-novelists",
+      "category": "use-case",
+      "title": "Hear Your Characters Before You Finish Writing Them",
+      "angle": "Using Voice Design during the drafting phase — prototyping how dialogue sounds, finding each character's voice before committing. A new creative discipline.",
+      "hero": "voice-design-hero.png",
+      "video": "spy-voice-design-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "multilingual-campaign-ads",
+      "category": "use-case",
+      "title": "Run a Global Ad Campaign in 40 Languages From a Single Script",
+      "angle": "Marketing workflow: one English script, voice-matched localization across every target market. Brand voice consistency, time-to-launch, cost model.",
+      "hero": "blog-placeholder-3.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "developer-sdks-python-typescript",
+      "category": "tutorial",
+      "title": "Python or TypeScript: Picking Your ElevenLabs SDK",
+      "angle": "SDK walkthrough — installing, authenticating, streaming TTS, handling voice design, websocket support. Side-by-side code samples in both languages.",
+      "hero": "blog-placeholder-4.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "open-source-ui-components",
+      "category": "product-launch",
+      "title": "ElevenLabs UI: The Open-Source Components That Save You a Week",
+      "angle": "The open-source UI kit for building audio and agent interfaces. What's inside, how to drop it into React/Next/Astro projects.",
+      "hero": "blog-placeholder-5.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "scale-audiobook-catalog",
+      "category": "use-case",
+      "title": "How One Publisher Converted 400 Backlist Titles Into Audiobooks in a Month",
+      "angle": "Publisher workflow: batch processing backlist titles into audio with consistent narrators, QA steps, distribution to Audible/Apple Books. The economics.",
+      "hero": "audiobooks-hero.jpg",
+      "video": "audiobooks-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "prompt-engineering-for-voice",
+      "category": "tutorial",
+      "title": "Prompt Engineering, But for Voices: A Working Vocabulary",
+      "angle": "How to prompt Voice Design — age, accent, pitch, texture, pacing, emotional register, reference archetypes. A working glossary of terms that get results.",
+      "hero": "voice-design-hero.png",
+      "video": "spy-voice-design-demo.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-consistency-across-sessions",
+      "category": "tutorial",
+      "title": "Lock Your Voice: Getting Consistent Output Across Months of Production",
+      "angle": "Seeding, voice settings, version pinning. How to make sure the narrator in Chapter 20 matches the narrator in Chapter 1 even when you generate six months apart.",
+      "hero": "eleven-v3-hero.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "ai-voice-for-small-youtubers",
+      "category": "use-case",
+      "title": "Solo YouTubers Are Quietly Scaling 10x With ElevenLabs Narration",
+      "angle": "Solo creator workflow — write script, generate narration, edit, publish. Ethical disclosure. The specific workflow that's producing 3 videos/week.",
+      "hero": "blog-placeholder-1.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-isolator-vs-descript",
+      "category": "comparison",
+      "title": "Voice Isolator vs Descript Studio Sound vs Adobe Enhance: Who Wins",
+      "angle": "Comparative test on the same noisy field recording. Headline output quality, UI friction, cost, and one scenario where each is the right pick.",
+      "hero": "blog-placeholder-2.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "emotional-control-long-form",
+      "category": "feature-deep-dive",
+      "title": "The Quiet Art of Emotional Control in Long-Form Narration",
+      "angle": "How to use stability/similarity/style sliders plus audio tags to get believable emotional arcs across a 10,000-word narration.",
+      "hero": "eleven-v3-hero.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "ai-voice-for-ecommerce-product-pages",
+      "category": "use-case",
+      "title": "Every Product Page Can Now Have a Human Walkthrough",
+      "angle": "E-commerce use case: generating a 30-second human-sounding walkthrough for every SKU. Conversion lift stories. API workflow.",
+      "hero": "blog-placeholder-3.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "agent-testing-and-simulation",
+      "category": "tutorial",
+      "title": "Your Voice Agent Needs a Test Suite — Here's How to Build One",
+      "angle": "Agent Testing feature: simulating conversations before deployment, regression tests, scoring behaviors, catching drift. Why this is the missing half of voice agent ops.",
+      "hero": "agents-hero.jpg",
+      "video": "v3-logo-black.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "music-api-launch",
+      "category": "product-launch",
+      "title": "Eleven Music API Is Live — Here's What You Can Build With It",
+      "angle": "The Music API endpoint. Request format, streaming support, genre/mood prompts, length controls, commercial licensing. Build ideas.",
+      "hero": "blog-placeholder-4.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "agent-analytics-optimization",
+      "category": "feature-deep-dive",
+      "title": "The Agent Analytics View That Tells You Where Your Bot Is Losing",
+      "angle": "Analytics dashboard for voice agents: drop-off points, sentiment, success rate, handoff reasons. How to use it to iterate toward a 90%+ resolution rate.",
+      "hero": "agents-hero.jpg",
+      "video": "v3-logo-black.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "ssml-vs-audio-tags",
+      "category": "comparison",
+      "title": "SSML vs Audio Tags: Why One Replaces the Other",
+      "angle": "For developers migrating from Google TTS or Polly — why audio tags are simpler, more expressive, and what the one-to-one mapping looks like.",
+      "hero": "blog-placeholder-5.jpg",
+      "video": "v3-logo-colourful.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "voice-cloning-ethics",
+      "category": "industry",
+      "title": "The Three Ethical Guardrails Every Voice Cloning Project Should Have",
+      "angle": "Consent, attribution, and reversibility — the framework that keeps voice cloning projects on the right side of trust. How ElevenLabs operationalizes this with voice captcha and the terms of use.",
+      "hero": "blog-placeholder-1.jpg",
+      "video": "v3-logo-black.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "free-tier-vs-starter-vs-creator",
+      "category": "comparison",
+      "title": "Which ElevenLabs Plan Actually Makes Sense for You",
+      "angle": "Plan comparison: minutes of audio, commercial licensing, concurrent streams, voice slots. Which tier pays for itself in which scenario.",
+      "hero": "blog-placeholder-2.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    },
+    {
+      "slug": "real-time-dubbing-for-broadcast",
+      "category": "use-case",
+      "title": "Real-Time Dubbing Is Coming for Sports and Live News",
+      "angle": "Where real-time voice synthesis + translation is replacing the two-week dub cycle in broadcast. Latency targets, current limitations, expected timeline.",
+      "hero": "blog-placeholder-3.jpg",
+      "video": "elevenlabs-lines-animated.mp4",
+      "status": "queued"
+    }
+  ]
+}

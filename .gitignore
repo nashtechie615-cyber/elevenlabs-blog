@@ -1,0 +1,32 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+scripts/.env
+
+# local source assets — the production copies live in public/resources/ and src/assets/
+/Resources/
+/Pages/
+
+# generator log
+scripts/generator.log
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/

@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+	--color-ink: #0f1219;
+	--color-ink-soft: #222939;
+	--color-muted: #60739f;
+	--color-line: #e5e9f0;
+	--color-accent: #2337ff;
+	--color-accent-dark: #000d8a;
+	--font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-sans);
+	color: var(--color-ink-soft);
+	background: #ffffff;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+.prose-body :where(h2):not(:where(.not-prose *)) {
+	font-size: 1.875rem;
+	font-weight: 700;
+	color: var(--color-ink);
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	line-height: 1.2;
+}
+.prose-body :where(h3):not(:where(.not-prose *)) {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--color-ink);
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+	line-height: 1.3;
+}
+.prose-body :where(p):not(:where(.not-prose *)) {
+	margin-bottom: 1.25rem;
+	line-height: 1.75;
+}
+.prose-body :where(a):not(:where(.not-prose *)) {
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+.prose-body :where(a):not(:where(.not-prose *)):hover {
+	color: var(--color-accent-dark);
+}
+.prose-body :where(ul,ol):not(:where(.not-prose *)) {
+	padding-left: 1.5rem;
+	margin-bottom: 1.25rem;
+}
+.prose-body :where(li):not(:where(.not-prose *)) {
+	margin-bottom: 0.5rem;
+}
+.prose-body :where(ul):not(:where(.not-prose *)) {
+	list-style: disc;
+}
+.prose-body :where(ol):not(:where(.not-prose *)) {
+	list-style: decimal;
+}
+.prose-body :where(blockquote):not(:where(.not-prose *)) {
+	border-left: 4px solid var(--color-accent);
+	padding-left: 1rem;
+	margin: 1.5rem 0;
+	color: var(--color-ink-soft);
+	font-style: italic;
+}
+.prose-body :where(img):not(:where(.not-prose *)) {
+	border-radius: 0.75rem;
+	margin: 1.5rem 0;
+}
+.prose-body :where(code):not(:where(.not-prose *)) {
+	background: var(--color-line);
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-size: 0.9em;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	border: 0;
+}

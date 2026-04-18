@@ -1,0 +1,157 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { AFFILIATE_URL, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 6);
+
+const pillars = [
+	{
+		title: 'Text to Speech',
+		body: 'Generate ultra-realistic, expressive speech across 70+ languages with the Eleven v3, Multilingual, and Flash models.',
+	},
+	{
+		title: 'Voice Cloning & Design',
+		body: 'Clone your own voice, design one from a written prompt, or pick from a library of thousands of studio-grade voices.',
+	},
+	{
+		title: 'Music & Sound Effects',
+		body: 'Create full studio-quality tracks, custom sound effects, and ambient audio from a single text prompt.',
+	},
+	{
+		title: 'Conversational Agents',
+		body: 'Deploy natural, human-sounding voice agents across phone, chat, email, and WhatsApp in 70+ languages.',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-white text-ink-soft">
+		<Header />
+
+		<main>
+			<section class="relative overflow-hidden border-b border-line bg-gradient-to-b from-white to-line/30">
+				<div class="mx-auto max-w-5xl px-6 py-24 text-center md:py-32">
+					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Voice Lab Weekly</p>
+					<h1 class="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-ink md:text-6xl">
+						Your field guide to<br />the best AI voice platform.
+					</h1>
+					<p class="mx-auto mt-6 max-w-2xl text-lg text-muted md:text-xl">
+						Fresh tutorials, product deep-dives, and creative experiments powered by ElevenLabs — the leading AI voice, music, and audio toolkit.
+					</p>
+					<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+						<a
+							href={AFFILIATE_URL}
+							target="_blank"
+							rel="noopener sponsored"
+							class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark"
+						>
+							Try ElevenLabs free
+						</a>
+						<a
+							href="/blog"
+							class="rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink"
+						>
+							Read the blog
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="mx-auto max-w-6xl px-6 py-20">
+				<h2 class="text-3xl font-bold tracking-tight text-ink md:text-4xl">What ElevenLabs does</h2>
+				<p class="mt-2 max-w-2xl text-muted">
+					One research foundation, four product pillars — the tools we write about every week.
+				</p>
+				<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+					{pillars.map((p) => (
+						<a
+							href={AFFILIATE_URL}
+							target="_blank"
+							rel="noopener sponsored"
+							class="group rounded-2xl border border-line bg-white p-6 transition hover:border-ink hover:shadow-lg hover:shadow-ink/5"
+						>
+							<h3 class="text-lg font-semibold text-ink group-hover:text-accent">{p.title}</h3>
+							<p class="mt-2 text-sm text-muted">{p.body}</p>
+						</a>
+					))}
+				</div>
+			</section>
+
+			<section class="border-t border-line bg-line/20">
+				<div class="mx-auto max-w-6xl px-6 py-20">
+					<div class="flex items-end justify-between">
+						<div>
+							<h2 class="text-3xl font-bold tracking-tight text-ink md:text-4xl">Latest posts</h2>
+							<p class="mt-2 text-muted">Rewritten, remixed, and road-tested.</p>
+						</div>
+						<a href="/blog" class="hidden text-sm font-semibold text-accent hover:text-accent-dark md:block">
+							View all →
+						</a>
+					</div>
+
+					{posts.length === 0 ? (
+						<p class="mt-10 text-muted">No posts yet. Check back soon.</p>
+					) : (
+						<div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+							{posts.map((post) => (
+								<a
+									href={`/blog/${post.id}/`}
+									class="group block overflow-hidden rounded-2xl border border-line bg-white transition hover:border-ink hover:shadow-xl hover:shadow-ink/5"
+								>
+									{post.data.heroImage && (
+										<Image
+											src={post.data.heroImage}
+											width={720}
+											height={400}
+											alt={post.data.title}
+											class="aspect-[16/9] w-full object-cover"
+										/>
+									)}
+									<div class="p-5">
+										<p class="text-xs font-medium uppercase tracking-wider text-muted">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+										<h3 class="mt-2 text-lg font-semibold leading-snug text-ink group-hover:text-accent">
+											{post.data.title}
+										</h3>
+										<p class="mt-2 line-clamp-3 text-sm text-muted">{post.data.description}</p>
+									</div>
+								</a>
+							))}
+						</div>
+					)}
+				</div>
+			</section>
+
+			<section class="mx-auto max-w-4xl px-6 py-24 text-center">
+				<h2 class="text-3xl font-bold tracking-tight text-ink md:text-4xl">
+					Skip the tutorial. Just hear it for yourself.
+				</h2>
+				<p class="mx-auto mt-4 max-w-2xl text-muted">
+					Spin up a voice, clone your own, or generate a full music track — free tier, no credit card.
+				</p>
+				<a
+					href={AFFILIATE_URL}
+					target="_blank"
+					rel="noopener sponsored"
+					class="mt-8 inline-block rounded-full bg-ink px-8 py-4 text-sm font-semibold text-white transition hover:bg-ink-soft"
+				>
+					Launch ElevenLabs →
+				</a>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
