@@ -1,0 +1,39 @@
+---
+title: "Build a Customer Service Voice Agent in One Afternoon"
+description: "End-to-end: pick a voice, wire up the knowledge base (RAG), connect to a phone number via SIP trunk, add turn-taking, test it with a real call. Highlight the Agents platform."
+pubDate: "Apr 19 2026"
+heroImage: "../../assets/agents-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Most customer service bots sound like they were built in 2012. Flat, robotic, impossible to interrupt. ElevenLabs' Agents platform changes that. You can have a working voice agent — one that answers calls, pulls from your own documentation, and actually sounds human — in a single afternoon. Here's how to do it.
+
+
+<Video src="/resources/elevenlabs-lines-animated.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Pick a Voice and Set Up Your Agent](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Start inside the [ElevenLabs Agents platform](https://try.elevenlabs.io/8jq9xhb1mno4). Create a new agent and choose a voice from the library. Pick something that fits your brand — the platform has voices across a range of accents, tones, and speaking styles. You can preview each one before committing. If none of them are quite right, you can clone a voice or fine-tune the style settings.
+
+Once the voice is locked in, write your system prompt. Keep it tight. Tell the agent who it is, what it's there to help with, and what it should do when a question falls outside its scope. A focused prompt produces a focused agent. Rambling prompts produce rambling agents.
+
+## [Wire Up Your Knowledge Base](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+This is where the agent goes from generic chatbot to something actually useful. The Agents platform supports retrieval-augmented generation, which means you can attach your own documents — FAQs, product manuals, support articles, whatever you have — and the agent will pull from them when answering questions.
+
+Upload your files directly in the knowledge base section of the agent settings. The platform handles the chunking and indexing. You don't need to manage embeddings yourself or set up a separate vector database. Once your documents are in, test a few queries in the playground to make sure the retrieval is working correctly before you go further.
+
+## [Connect a Phone Number via SIP Trunk](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The Agents platform supports SIP, so you can connect it to a real phone number through your existing telephony provider. In the agent's phone settings, you'll find the SIP endpoint details you need. Plug those into your provider's dashboard, point an inbound number at the agent, and you're live.
+
+Turn-taking is handled automatically. The agent uses interruption detection to know when a caller is speaking, so it stops mid-sentence rather than bulldozing through. You can adjust the sensitivity if callers are getting cut off too often or not often enough. This one setting does a lot for how natural the conversation feels.
+
+## [Test With a Real Call](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Don't just test in the browser playground. Call the number from your own phone. Listen for awkward pauses, wrong answers, and moments where the agent should hand off to a human but doesn't. Check the call logs in the dashboard — they show transcripts and latency data, which makes it easy to spot where things are going wrong.
+
+Iterate on the system prompt and the knowledge base based on what you hear. Most issues come down to one of two things: the prompt is too vague, or the relevant information isn't in the knowledge base yet. Both are quick fixes.
+
+A working voice agent doesn't require a developer team or a six-week timeline. [Get started on the ElevenLabs Agents platform](https://try.elevenlabs.io/8jq9xhb1mno4) and have something answering real calls by end of day.

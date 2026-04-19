@@ -71,7 +71,8 @@
       "angle": "End-to-end: pick a voice, wire up the knowledge base (RAG), connect to a phone number via SIP trunk, add turn-taking, test it with a real call. Highlight the Agents platform.",
       "hero": "agents-hero.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-19T05:00:19.716Z"
     },
     {
       "slug": "dubbing-studio-workflow",
@@ -80,7 +81,8 @@
       "angle": "How Dubbing Studio preserves the creator's voice identity across languages. Upload, auto-translate, voice-match, review, export. Cost and time per minute of output.",
       "hero": "blog-placeholder-2.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-19T05:00:36.686Z"
     },
     {
       "slug": "sound-effects-from-a-prompt",
@@ -89,7 +91,8 @@
       "angle": "Text-to-SFX as a creative unlock. Examples: 'a rusty gate slamming in the wind,' 'a crowd gasping,' 'a dragon exhaling.' How it slots into game dev, podcast, and video workflows.",
       "hero": "blog-placeholder-3.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-19T05:00:59.304Z"
     },
     {
       "slug": "music-generation-for-podcasters",
