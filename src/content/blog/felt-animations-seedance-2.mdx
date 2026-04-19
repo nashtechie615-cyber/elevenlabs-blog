@@ -1,0 +1,55 @@
+---
+title: "How to Create Felt Animations with Seedance 2.0"
+description: "A walkthrough of crafting cozy, stop-motion-inspired felt animations using ElevenLabs Seedance 2.0 — with the exact prompt used to generate the Artemis II astronaut short."
+pubDate: "Apr 19 2026"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+---
+
+import { AFFILIATE_URL } from '../../consts';
+
+[ElevenLabs Seedance 2.0](https://try.elevenlabs.io/8jq9xhb1mno4) is quietly becoming the go-to model for creators who want their video generations to feel *handmade*. The felt-craft look — soft wool textures, stitched seams, embroidered stars, tiny quilted spacecraft — is one of the styles where the model genuinely shines. In this post we'll walk through exactly how to get there, using a 15-second Artemis II mission short as the example.
+
+<figure class="my-8">
+  <div class="overflow-hidden rounded-2xl shadow-lg shadow-ink/5" style="aspect-ratio: 16/9;">
+    <iframe
+      src="https://www.youtube.com/embed/9dPS-59BWs0"
+      title="How to Create Felt Animations with Seedance 2.0"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      class="block w-full h-full"
+      style="border: 0;"
+    ></iframe>
+  </div>
+  <figcaption class="mt-3 text-center text-sm">
+    <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored">Try Seedance 2.0 on ElevenLabs →</a>
+  </figcaption>
+</figure>
+
+*The full prompt used in this video is below:*
+
+*A 100% felt-made heartfelt short story about the four Artemis II astronauts setting off from Earth, flying around the Moon, and returning safely home (miniature handcrafted astronaut figures in white stitched suits with clear visors, round expressive silhouettes, tiny mission patches, soft wool textures, Orion capsule with quilted seams, cozy handmade realism, brave curious body language, inspiring adventurous tone) + the astronauts wave inside their felt rocket, the rocket launches in a burst of layered cotton flame and trembling stitched smoke, drift peacefully through deep navy space inside the Orion capsule, gaze in wonder as the Moon fills the window, sweep around the lunar far side with Earth glowing small in the distance, then arc back through space, reenter in a warm glowing trail, and splash down gently in a soft felt ocean as recovery teams welcome them home + in a fully handcrafted felt space-and-Earth world with a stitched launch pad, layered clouds, sparkling embroidered stars, a cratered wool Moon, glowing patchwork Earth, and a gently rippling ocean, designed for a clear 15-second emotional arc of launch, wonder, lunar flyby, return, and reunion, with simple readable visual storytelling and no on-screen text, no dialogue, and no voiceover + cinematic macro close-ups mixed with wide orbital shots, soft push-ins, gentle capsule POV through rounded windows, smooth tracking around the spacecraft, shallow depth of field, luminous sunrise glow at launch, cool moonlight in space, warm fiery reentry light, tender triumphant atmosphere, polished stop-motion-inspired motion, awe-filled comforting mood.*
+
+## [Why felt is such a good fit for Seedance 2.0](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Felt is forgiving. Real handmade felt animation hides tiny inconsistencies inside fuzz, wool fibers, and stitched seams — the very things AI video models used to struggle with. Seedance 2.0 leans into that forgiveness. Small texture jitter between frames reads as the natural wobble of stop-motion instead of the uncanny shimmering you sometimes see in slicker styles. The result feels warm, tactile, and intentionally imperfect.
+
+## [Anatomy of the prompt](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The prompt above looks long, but it's really four stacked blocks separated by `+` symbols:
+
+1. **The world and characters.** We open by declaring the entire scene is "100% felt-made" and describe the astronauts as miniature handcrafted figures with stitched suits, round silhouettes, mission patches, and expressive body language. Getting the material and character design nailed down first anchors every subsequent shot.
+2. **The story beats.** Launch → drift through space → the Moon fills the window → lunar flyby → reentry → splashdown and welcome home. Seedance 2.0 responds well to a list of beats because it can pace them across the target duration automatically.
+3. **The environment details.** Stitched launch pad, embroidered stars, cratered wool Moon, patchwork Earth, rippling felt ocean. The more craft vocabulary you pack in, the more consistent the texture language stays across shots.
+4. **Cinematography.** Macro close-ups, orbital wides, soft push-ins, capsule POV, shallow depth of field, and a warm-to-cool-to-warm lighting arc. This is what turns a cute craft scene into a short film.
+
+## [Dialing it in yourself](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+A few small tips that came out of the generation runs:
+
+- Keep the material commitment at the top ("100% felt-made") — if you bury it, you'll get glossier finishes creeping back in.
+- State the duration and emotional arc explicitly. "15-second emotional arc of launch, wonder, lunar flyby, return, and reunion" pushes the model to distribute beats instead of lingering.
+- Explicitly forbid text, dialogue, and voiceover if you want clean visual storytelling — the model otherwise sometimes adds floating captions to "tell" the beat.
+- Mix shot scales. Asking for "macro close-ups mixed with wide orbital shots" produces more dynamic cuts than a single camera style.
+
+The Artemis short above took under a minute to render at 1080p. If you want to try the same workflow on your own brief — felt, claymation, paper cut, miniature diorama, any handmade aesthetic — [spin up Seedance 2.0 on ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and paste the prompt as a starting point. Swap the subject, keep the four-block structure, and you're off.
