@@ -1,0 +1,37 @@
+---
+title: "Voice Isolator: The Click That Saves Every Field Recording"
+description: "Removing wind, HVAC hum, café chatter from dialogue tracks. Comparison with traditional noise reduction. Real scenarios — docs, podcasts, shot-on-phone interviews."
+pubDate: "Apr 20 2026"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+You recorded the interview. The subject said something brilliant. Then you put on headphones and heard the HVAC unit, the rain on the window, and three people arguing about coffee orders in the background. That's the moment Voice Isolator matters.
+
+
+<Video src="/resources/elevenlabs-lines-animated.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What Voice Isolator Actually Does](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Voice Isolator is a tool inside ElevenLabs that strips non-voice audio from a recording and returns only the speech. You upload a file, it processes the track, and what comes back is the vocal content — separated from whatever noise was sharing the same space.
+
+This is different from traditional noise reduction. Classic noise reduction workflows, whether in Audacity, Adobe Audition, or a hardware gate, work by sampling a noise floor and subtracting it. That works reasonably well for consistent, steady-state noise. It falls apart with variable noise — a bus that passes once, a door slamming, wind gusts that spike and drop. You end up chasing the problem manually, clip by clip.
+
+Voice Isolator approaches it differently. Instead of subtracting noise from the original signal, it's trained to recognize and extract speech. The noise doesn't get reduced. The voice gets pulled out. That's a meaningful architectural difference, and in practice it handles chaotic environments much better than EQ and gates can.
+
+## [The Scenarios Where This Pays Off](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Documentary work is the obvious use case. A subject filmed outside with a lav mic still picks up wind across the diaphragm. A sit-down in a kitchen catches refrigerator hum and ambient clatter. Post-production teams used to spend real hours on these tracks. Voice Isolator compresses that to minutes.
+
+Podcasters recording remotely face a different version of the same problem. A guest records on their phone in a home office with a ceiling fan running. Another guest is near a window. The host's setup is clean, but the mix sounds inconsistent. Running guest tracks through [Voice Isolator](https://try.elevenlabs.io/8jq9xhb1mno4) before editing levels out the field.
+
+Shot-on-phone interviews are where this might matter most. No dedicated mic, no controlled environment, no second take. A journalist interviews someone on a street corner. A filmmaker captures a candid moment. The footage is irreplaceable but the audio is a mess. That recording is now recoverable rather than unusable.
+
+## [Limits Worth Knowing](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Voice Isolator is not a correction tool for bad mic technique at close range — things like clipping, plosives, and proximity distortion are separate problems. It also works best when there is a clear vocal presence in the file. Recordings where the voice is genuinely buried under loud continuous noise will see less dramatic results than recordings with moderate environmental contamination.
+
+For most real-world field recording situations, though, moderate contamination is exactly what you're dealing with. A café. A park. A corridor outside a conference room. [These are the recordings](https://try.elevenlabs.io/8jq9xhb1mno4) that Voice Isolator was built for.
+
+If you have a backlog of audio you've been avoiding because of background noise, this is worth running today. Drop a file into Voice Isolator at [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and see what the voice actually sounds like without everything else in the room.

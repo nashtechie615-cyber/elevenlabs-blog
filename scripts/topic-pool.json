@@ -101,7 +101,8 @@
       "angle": "Eleven Music for podcast intros, transitions, outro stingers. Prompting tips, genre tags, how long you can go, licensing clarity.",
       "hero": "blog-placeholder-4.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-20T05:00:20.899Z"
     },
     {
       "slug": "voice-isolator-for-video-editors",
@@ -110,7 +111,8 @@
       "angle": "Removing wind, HVAC hum, café chatter from dialogue tracks. Comparison with traditional noise reduction. Real scenarios — docs, podcasts, shot-on-phone interviews.",
       "hero": "blog-placeholder-5.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-20T05:00:41.011Z"
     },
     {
       "slug": "conversational-ai-2-overview",
@@ -119,7 +121,8 @@
       "angle": "The jump from scripted IVRs to v2 agents — turn-taking models, interruption handling, backchanneling, tool use, the expressive mode. Why enterprises are re-evaluating their support stack.",
       "hero": "agents-hero.jpg",
       "video": "v3-logo-colourful.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-20T05:01:00.884Z"
     },
     {
       "slug": "agents-workflows-multi-step",
