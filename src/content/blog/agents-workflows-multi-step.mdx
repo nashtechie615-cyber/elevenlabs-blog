@@ -1,0 +1,43 @@
+---
+title: "Agent Workflows: Hand-Designing the Conversations That Actually Close"
+description: "Visual workflow builder for multi-step agent flows. Branching logic, business rules, database hooks. A worked example: a loan prequalification flow."
+pubDate: "Apr 21 2026"
+heroImage: "../../assets/agents-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Most voice AI deployments fail the same way: a single prompt trying to handle every situation, no memory of what was said two turns ago, and no connection to the systems that actually matter. The result is an agent that sounds fine in a demo and falls apart on a real call. ElevenLabs' visual workflow builder is the fix. It lets you map out exactly what your agent should do, step by step, and wire it to the data your business already runs on.
+
+
+<Video src="/resources/v3-logo-black.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What the Workflow Builder Actually Does](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The workflow builder is a node-based canvas. You drag in steps, connect them with edges, and define what happens at each point in the conversation. Each node can hold a prompt, a conditional branch, a variable, or an external call. The agent follows the path you draw.
+
+This is meaningfully different from prompt engineering a single monolithic instruction block. When logic lives in a visual graph, you can see the whole conversation at once. You can spot gaps. You can hand it to a non-engineer and they can read it.
+
+Branching is where it gets useful. A node can fork based on what the caller said, what a database returned, or whether a condition is met. If the caller says yes, go left. If the lookup returns a value above a threshold, go right. You set the rules; the agent follows them on every call without deviation.
+
+## [A Worked Example: Loan Prequalification](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Loan prequalification is a good test case because it has real stakes, real branching, and real data dependencies.
+
+Here is how a basic flow looks in practice. The agent opens with a standard greeting and collects the caller's name and contact information into variables. Those get stored and carried through the rest of the conversation. Next, the agent asks about employment status. That answer triggers the first branch: employed callers move into income verification questions, while self-employed callers get routed to a different node with different questions.
+
+Once income information is collected, the agent makes an outbound call to your [loan origination system](https://try.elevenlabs.io/8jq9xhb1mno4) via a configured API hook. The system returns a soft prequalification result — approved, referred, or declined — and the agent reads that result and continues down the matching branch. Approved callers hear next steps and get transferred to a human loan officer. Referred callers hear a tailored holding message. Declined callers receive a brief explanation and an alternative resource.
+
+The entire flow runs without a human in the loop until the transfer moment. Every answer is captured, every branch is auditable, and the same logic runs on call one and call ten thousand.
+
+## [Connecting to Real Business Systems](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The workflow builder supports webhook and API calls at any node. That means you can pull data before a conversation starts, push data after a step completes, or make a synchronous call mid-conversation and use the response to decide what happens next.
+
+Common integrations include CRMs, identity verification services, scheduling systems, and internal databases. Variables captured during the call — name, account number, intent, outcome — can be passed directly to those systems in the payload. No manual logging, no post-call cleanup script.
+
+You configure the request shape inside the node: the endpoint, the method, the headers, and the body fields mapped to your conversation variables using angle bracket notation like `<caller_name>` or `<income_amount>`. What comes back can be stored as a new variable and referenced in any downstream node.
+
+This is the part that separates a novelty from a business tool. The agent is not just talking — it is reading and writing to the systems your business depends on.
+
+If you are building a flow that needs to do real work on real calls, [start here](https://try.elevenlabs.io/8jq9xhb1mno4) and see how far you can get before you need to write a single line of code.

@@ -131,7 +131,8 @@
       "angle": "Visual workflow builder for multi-step agent flows. Branching logic, business rules, database hooks. A worked example: a loan prequalification flow.",
       "hero": "agents-hero.jpg",
       "video": "v3-logo-black.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-21T05:00:24.838Z"
     },
     {
       "slug": "voice-library-curation",
@@ -140,7 +141,8 @@
       "angle": "Strategic search of the Voice Library — tagging, gender, accent, age filters, sample lines to audition against, saving shortlists. Specific picks for audiobook, game, and ad use cases.",
       "hero": "voice-design-hero.png",
       "video": "spy-voice-design-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-21T05:00:45.449Z"
     },
     {
       "slug": "audio-native-embed-for-writers",
@@ -149,7 +151,8 @@
       "angle": "Audio Native embed for writers and publishers. How it crawls your site, updates when you edit, attributes voices, handles paywalls.",
       "hero": "blog-placeholder-1.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-21T05:01:04.020Z"
     },
     {
       "slug": "speech-to-text-meeting-transcription",
