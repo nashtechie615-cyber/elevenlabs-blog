@@ -1,0 +1,39 @@
+---
+title: "Every NPC in Your Indie Game Can Now Have a Unique Voice"
+description: "Voice Design for game devs. Generating, saving, and consistently recalling character voices. Pipeline for hundreds of lines per character. Licensing and character IP clarity."
+pubDate: "Apr 22 2026"
+heroImage: "../../assets/blog-placeholder-2.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+For most indie developers, voice acting is either too expensive or completely skipped. The result is silent NPCs, walls of text, or a handful of recycled voices that make your world feel thin. That's a solvable problem now. With a solid generative voice pipeline, every guard, merchant, and minor quest-giver in your game can sound like a distinct person.
+
+
+<Video src="/resources/spy-voice-design-demo.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Building Character Voices That Actually Stick](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+ElevenLabs lets you design a voice from scratch using Voice Design, where you describe characteristics like age, accent, and tone, and the system generates options. Once you land on something that fits a character, you save it to your Voice Library. That saved voice becomes a permanent, callable asset tied to a specific voice ID.
+
+This matters more than it sounds. When you're generating hundreds of lines across multiple sessions, you need the voice for your gruff blacksmith to sound identical in chapter one and chapter five. Saving the voice locks that consistency in. You're not re-prompting and hoping — you're calling a stable profile every time.
+
+For a mid-sized RPG with thirty named characters, you could build out thirty distinct saved voices in an afternoon. Each one gets a descriptive name you control, so your pipeline stays organized and your team can reference them without confusion.
+
+## [Generating Lines at Scale Without Losing Your Mind](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The practical workflow for bulk generation goes like this: write your script, tag each line with a character name, map that name to a voice ID, then run generation through the API. ElevenLabs exposes a straightforward REST API, so you can script this in Python or integrate it into whatever build tooling you already use.
+
+You can pass in stability and similarity settings per character to fine-tune how expressive or consistent the delivery is. A stoic soldier probably wants high stability. A chaotic trickster character might benefit from dialing that down slightly to get more variation across repeated lines.
+
+The [Text to Speech API](https://try.elevenlabs.io/8jq9xhb1mno4) returns audio files you can drop straight into your asset pipeline. Batch processing hundreds of lines per session is realistic. That's the difference between voice acting being a late-stage afterthought and being baked into your production schedule from the start.
+
+## [What You Actually Own](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Licensing clarity matters for shipping a commercial product. ElevenLabs grants you the rights to use generated audio in commercial projects under their standard paid plans. The voices you create using Voice Design are yours to use — they're not shared public assets that another developer could accidentally pull into their project.
+
+That means the grizzled innkeeper voice you designed is effectively character IP you control within your project. You're not leasing a celebrity voice or navigating complex talent contracts. The audio files you generate are yours to ship, sell, and build sequels around.
+
+This is a meaningful shift for small studios. Voice acting used to require budget, scheduling, recording infrastructure, and legal agreements. Now the barrier is a decent script and a few hours of setup work.
+
+If you're building a game with any kind of narrative layer, there's no reason to leave your NPCs silent. [Start building your character voice library](https://try.elevenlabs.io/8jq9xhb1mno4) and see how far you can take it before your next milestone.
