@@ -191,7 +191,8 @@
       "angle": "Studio 3.0 UX for long-form audio — chapter structure, timeline scrubbing, pronunciation overrides, regenerate-just-this-sentence. What changed from 2.x.",
       "hero": "blog-placeholder-4.jpg",
       "video": "v3-logo-colourful.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-23T05:00:22.409Z"
     },
     {
       "slug": "eleven-reader-app",
@@ -200,7 +201,8 @@
       "angle": "The ElevenReader consumer app. Import any PDF, article, or ebook and listen on your commute. Voice selection, speed controls, bookmarking.",
       "hero": "blog-placeholder-5.jpg",
       "video": "audiobooks-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-23T05:00:36.407Z"
     },
     {
       "slug": "gen-fm-podcast-from-url",
@@ -209,7 +211,8 @@
       "angle": "How GenFM inside ElevenReader turns any article into a conversational podcast with two AI hosts. Use cases for researchers, students, and people with a long commute.",
       "hero": "blog-placeholder-1.jpg",
       "video": "audiobooks-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-23T05:00:56.069Z"
     },
     {
       "slug": "pronunciation-dictionaries",
