@@ -221,7 +221,8 @@
       "angle": "Pronunciation dictionaries — phonetic overrides, IPA vs alias, per-project vs account-wide. Fix the one word that keeps breaking your demo.",
       "hero": "blog-placeholder-2.jpg",
       "video": "v3-logo-black.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-24T05:00:24.154Z"
     },
     {
       "slug": "voice-changer-live-streaming",
@@ -230,7 +231,8 @@
       "angle": "Using Voice Changer for real-time voice transformation in streams and calls. Latency, setup, voice library, moral/ethical use cases.",
       "hero": "blog-placeholder-3.jpg",
       "video": "spy-voice-design-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-24T05:00:42.407Z"
     },
     {
       "slug": "api-rate-limits-and-scaling",
@@ -239,7 +241,8 @@
       "angle": "Developer-focused: understanding the API quotas, using websockets for streaming, backoff strategies, when to upgrade tier, multi-key fan-out patterns.",
       "hero": "blog-placeholder-4.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-24T05:01:04.907Z"
     },
     {
       "slug": "voice-for-accessibility",

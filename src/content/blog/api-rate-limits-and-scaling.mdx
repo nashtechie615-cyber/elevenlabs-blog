@@ -1,0 +1,47 @@
+---
+title: "Rate Limits, Concurrency, and Queueing: Scaling ElevenLabs in Production"
+description: "Developer-focused: understanding the API quotas, using websockets for streaming, backoff strategies, when to upgrade tier, multi-key fan-out patterns."
+pubDate: "Apr 24 2026"
+heroImage: "../../assets/blog-placeholder-4.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Getting ElevenLabs working in a demo is easy. Getting it to hold up under real traffic is a different problem entirely. If you're building anything beyond a toy — a podcast tool, a call center integration, a game with dynamic dialogue — you'll hit rate limits faster than you expect, and the default retry logic in most HTTP clients will make things worse, not better.
+
+Here's what you need to know before that happens.
+
+
+<Video src="/resources/elevenlabs-lines-animated.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Understanding API Quotas and Concurrency Limits](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+ElevenLabs enforces two distinct constraints: character quotas (monthly) and concurrent request limits. These are separate problems and need separate solutions.
+
+Character quotas are straightforward. Every plan gives you a monthly ceiling on how many characters you can convert to speech. Once you're gone, you're gone until the billing cycle resets. Track this actively — don't wait for a 429 to tell you.
+
+Concurrency limits are trickier. They cap how many simultaneous generation requests your account can have in flight. Hit that ceiling and new requests fail immediately. The number varies by tier, and bumping into it during a traffic spike is one of the most common production failures developers report.
+
+The fix isn't to keep hammering the endpoint. It's to build a queue. Use a lightweight in-process queue or a proper job queue like BullMQ or Celery, depending on your stack. Accept the request from your user, enqueue the generation job, and respond asynchronously. Your users get a better experience and your API calls stay within bounds.
+
+## [WebSockets for Streaming and Why Latency Changes Everything](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The REST endpoint works fine for pre-generating audio files. For anything real-time — voice agents, live narration, conversational apps — you want the [WebSocket streaming API](https://try.elevenlabs.io/8jq9xhb1mno4). It starts delivering audio chunks almost immediately, which cuts perceived latency dramatically compared to waiting for a full file to generate before playback begins.
+
+The tradeoff is complexity. You're managing a persistent connection, handling partial chunks, and dealing with reconnect logic yourself. Write a thin wrapper that handles reconnection with exponential backoff, and treat the WebSocket as a resource to be pooled, not opened and closed per request.
+
+Backoff strategy matters across both REST and WebSocket usage. When you get a 429 or a 503, back off exponentially with jitter. Start at something like 500ms, double each retry, cap at 30 seconds, and add random jitter so multiple clients don't retry in lockstep and create a thundering herd.
+
+## [Multi-Key Fan-Out for High-Volume Workloads](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+If you're running a platform where multiple customers each generate audio, you have a natural option available: provision separate API keys per customer or per workload segment, and route requests through the appropriate key.
+
+This isn't gaming the system — it's the intended model. Each key carries its own concurrency bucket. Fan-out across keys at the router layer, and you multiply your effective concurrency ceiling without changing your tier.
+
+The implementation is simple. Maintain a pool of API keys with their current in-flight request counts. When a new job comes in, pick the key with the lowest current load. If all keys are saturated, queue the job. Wrap all of this behind a single internal service so the rest of your application doesn't care about any of it.
+
+When to upgrade tiers instead: if your character volume is consistently near the cap, or if fan-out is getting complicated to manage, the math often favors a higher tier. Run the numbers on engineering time versus subscription cost. The answer is usually obvious.
+
+---
+
+Production audio at scale is a solvable problem. Start with [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and build the queuing and backoff infrastructure before you need it, not after your first outage.

@@ -1,0 +1,41 @@
+---
+title: "Teach ElevenLabs to Pronounce Your Brand Name Correctly Forever"
+description: "Pronunciation dictionaries — phonetic overrides, IPA vs alias, per-project vs account-wide. Fix the one word that keeps breaking your demo."
+pubDate: "Apr 24 2026"
+heroImage: "../../assets/blog-placeholder-2.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Every voice demo has that one word. The product name, the founder's last name, the made-up brand that your marketing team loves and your TTS engine absolutely mangles. ElevenLabs has a fix for this, and most people walk right past it. It's called the pronunciation dictionary, and once you set it up, that word stays correct across every generation.
+
+
+<Video src="/resources/v3-logo-black.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What a Pronunciation Dictionary Actually Does](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+A pronunciation dictionary is a list of rules that tells ElevenLabs how to say specific words. You're not retraining the model. You're just intercepting certain strings before synthesis and replacing them with a pronunciation the model can handle cleanly.
+
+There are two ways to write those rules. The first is an **alias**, which swaps one written form for another. If your brand is spelled "Xcela" but sounds like "Excella," you tell the dictionary to treat "Xcela" as "Excella" and the model reads it phonetically from there. Simple, fast, and requires no specialized knowledge.
+
+The second method uses **IPA** — the International Phonetic Alphabet. IPA gives you precise control over every sound. Instead of hoping the alias lands correctly, you're specifying the exact phonemes. This matters when the alias route still produces the wrong result, or when you're dealing with names from other languages. The tradeoff is that IPA takes a few minutes to learn if you haven't used it before. Resources like the IPA chart at the International Phonetic Association's site make it approachable.
+
+## [Per-Project vs. Account-Wide Rules](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+This is where most people make a decision they later regret. ElevenLabs lets you attach a pronunciation dictionary at the project level or apply it more broadly. If you're building a single audiobook or a one-off campaign, project-level is fine. You scope the rules to where they're needed and nothing bleeds into other work.
+
+But if your brand name shows up everywhere — in your podcast, your product walkthroughs, your customer support audio — you want those rules available without having to reimport them every time. Setting up your dictionary at the account level and referencing it via the API means the fix travels with you. You pass the dictionary ID in your [API request](https://try.elevenlabs.io/8jq9xhb1mno4) and the rules apply to that generation automatically.
+
+## [How to Build Your First Dictionary](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The format ElevenLabs accepts is a PLS file — a standard XML-based pronunciation lexicon. It looks more complicated than it is. Each entry has a grapheme tag (the written word), an alias or phoneme tag (the replacement), and an alphabet attribute if you're using IPA.
+
+Start with one word. The worst offender in your script. Write the entry, upload the file, and run a test generation. Listen to the result. If the alias approach didn't land, switch to IPA for that entry. Once the output sounds right, add the next problematic term and build from there.
+
+Keep the dictionary file in version control alongside your scripts. When a new team member joins or you hand the project off, the fix is already documented and portable. No one has to rediscover the problem.
+
+A few practical notes: capitalization matters in grapheme matching, so add separate entries if the word appears in different cases. And if you update the dictionary file, you need to re-upload it — ElevenLabs uses the version that was active at upload time, not a live-linked file.
+
+---
+
+Your brand name is too important to leave to chance every time you hit generate. [Get started with ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and set up your pronunciation dictionary before your next demo goes out the door.
