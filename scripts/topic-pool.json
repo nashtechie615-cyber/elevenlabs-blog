@@ -251,7 +251,8 @@
       "angle": "ElevenReader and voice cloning as accessibility tools for dyslexia, ALS, visual impairment, and low-literacy contexts. Real stories, practical setup.",
       "hero": "blog-placeholder-5.jpg",
       "video": "audiobooks-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-25T05:00:21.585Z"
     },
     {
       "slug": "governance-and-ai-provenance",
@@ -260,7 +261,8 @@
       "angle": "Provenance, watermarking, AI Speech Classifier, AI transparency policy. Why this matters for publishers, platforms, and newsrooms.",
       "hero": "blog-placeholder-1.jpg",
       "video": "v3-logo-black.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-25T05:00:40.087Z"
     },
     {
       "slug": "voice-for-educators",
@@ -269,7 +271,8 @@
       "angle": "How K-12 and higher-ed teachers use ElevenLabs for narrating slides, creating study guides, flipping classrooms. Cost tier that works.",
       "hero": "blog-placeholder-2.jpg",
       "video": "audiobooks-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-25T05:00:58.832Z"
     },
     {
       "slug": "voice-for-health-providers",
