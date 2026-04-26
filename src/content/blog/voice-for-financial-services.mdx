@@ -1,0 +1,43 @@
+---
+title: "The Compliance-Friendly Way to Use AI Voice in Banking"
+description: "Financial services voice use cases — ID verification, collections, notifications. PCI DSS, data residency, the Eleven enterprise deployment options."
+pubDate: "Apr 26 2026"
+heroImage: "../../assets/enterprise-local-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Banking runs on trust. The moment a customer hears a robotic, glitchy voice reading their account balance or asking them to confirm a payment, that trust takes a hit. AI voice has gotten good enough to fix that problem — but financial services teams have a different worry: compliance. PCI DSS, data residency requirements, call recording rules, and internal security reviews all have to be satisfied before a single voice call goes live. Here's how ElevenLabs fits into that picture.
+
+
+<Video src="/resources/v3-logo-black.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Where AI Voice Actually Shows Up in Financial Services](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Three use cases come up constantly in banking and fintech: outbound notifications, collections calls, and identity verification prompts.
+
+Outbound notifications are the easiest entry point. A generated voice reads a fraud alert, a payment reminder, or a loan status update. No agent required. The audio can be pre-generated in batch or synthesized in real time depending on how dynamic the content needs to be.
+
+Collections is more sensitive. The tone, phrasing, and pacing of a collections call directly affects how customers respond — and whether the call clears regulatory review. With ElevenLabs, teams can design a specific voice persona that matches brand guidelines and test it before deployment. That consistency matters when calls are being monitored for compliance.
+
+Identity verification prompts are the newest frontier. Conversational AI agents that walk a customer through a verification flow need voices that sound authoritative but not aggressive. ElevenLabs' [voice design tools](https://try.elevenlabs.io/8jq9xhb1mno4) let teams dial in those qualities rather than accepting whatever a generic TTS system produces.
+
+## [Handling PCI DSS and Data Residency](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+This is where most enterprise conversations get detailed fast.
+
+PCI DSS requires that cardholder data be handled in controlled, auditable environments. If your voice application is reading back card numbers, account details, or transaction amounts, the infrastructure running the synthesis has to meet those standards — or the sensitive data has to stay out of the synthesis layer entirely.
+
+Data residency is a related but separate concern. Some jurisdictions require that customer data not leave a specific geographic boundary. ElevenLabs offers enterprise deployment options that address this, including the ability to run within environments that meet regional data handling requirements. That means financial institutions operating in the EU, UK, or other regulated markets can structure deployments accordingly rather than routing everything through shared cloud infrastructure.
+
+The practical advice: map your data flows before you start integrating. Know which fields touch the voice synthesis layer and which ones don't. Structure prompts so that sensitive values are either excluded or handled through compliant pipelines.
+
+## [Enterprise Deployment Options Worth Knowing](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+ElevenLabs isn't only available as a standard API integration. For institutions that need more control, there are enterprise-tier arrangements that provide dedicated infrastructure, enhanced audit logging, and direct support for security review processes.
+
+That matters because most bank security teams will ask detailed questions about where audio is generated, how long synthesis logs are retained, and who has access to the request data. Having answers to those questions — backed by contractual commitments — is what separates a vendor that can pass an internal review from one that can't.
+
+Custom voice agreements are also relevant here. A bank may not want its voice persona replicated elsewhere. Enterprise terms can include protections around voice usage and access controls that aren't part of standard API plans.
+
+If you're evaluating AI voice for a financial services deployment and want to see what the enterprise options actually look like, [start here](https://try.elevenlabs.io/8jq9xhb1mno4).
