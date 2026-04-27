@@ -1,0 +1,41 @@
+---
+title: "ElevenLabs UI: The Open-Source Components That Save You a Week"
+description: "The open-source UI kit for building audio and agent interfaces. What's inside, how to drop it into React/Next/Astro projects."
+pubDate: "Apr 27 2026"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Building an audio interface from scratch is tedious. You need waveform visualizers, microphone controls, playback states, agent conversation flows — and none of it exists in your standard component library. ElevenLabs noticed that gap and shipped an open-source UI kit designed specifically for audio and conversational AI applications. It's practical, composable, and built to drop into the projects developers are already running.
+
+
+<Video src="/resources/v3-logo-colourful.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What's Actually Inside the Kit](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The component library covers the pieces that take the longest to build yourself. You get ready-made components for audio playback controls, recording interfaces, and real-time conversation UIs built for agent interactions. The waveform visualizer alone would cost most developers a full day to wire up correctly — handling the Web Audio API, animation frames, and responsive sizing is not trivial work.
+
+There are also conversation state components designed around ElevenLabs' agent platform. These handle the back-and-forth of a voice agent session: thinking states, speaking indicators, transcript displays, and error boundaries. Instead of building state machines from scratch, you pull in the component and configure it.
+
+The kit is built on top of Tailwind and Radix primitives, so it fits naturally into any project already using that stack. Components are unstyled enough to customize but opinionated enough to actually work out of the box.
+
+## [How to Drop It Into React, Next.js, or Astro](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Installation is a single npm command. The package is structured so you import only what you need — no bloated bundles pulling in components you're not using.
+
+For a Next.js project, you add the package, configure your [ElevenLabs API key](https://try.elevenlabs.io/8jq9xhb1mno4) as an environment variable using a name like ELEVENLABS_API_KEY, and the components connect to the platform automatically. The conversation component, for example, accepts a prop like agentId with a value such as AGENT_ID, and it handles the WebSocket connection, audio streaming, and session lifecycle without additional wiring.
+
+Astro support works through the framework's island architecture. You mark the component as client-side rendered and pass your configuration as props. It behaves like any other interactive island.
+
+React without a meta-framework is equally straightforward. The hooks are exported separately from the visual components, so if you want the logic without the default UI, you can build your own wrapper around the underlying audio and agent state.
+
+## [Why It Saves You a Week](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The honest reason this matters is that audio UI is disproportionately hard to build well. Synchronizing playback state with visual feedback, handling browser permissions gracefully, managing WebSocket reconnections — each problem is solvable, but together they eat time.
+
+This kit solves them once and lets you move on. If you're building a customer support agent, a voice-enabled product assistant, or any application that puts [AI audio front and center](https://try.elevenlabs.io/8jq9xhb1mno4), you're not starting from zero on the interface layer.
+
+The components are open source, so you can inspect, fork, and modify anything that doesn't fit your exact needs. That's a better starting point than a blank file.
+
+If you want to see what your next audio project could look like without the usual setup overhead, [start here](https://try.elevenlabs.io/8jq9xhb1mno4).

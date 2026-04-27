@@ -1,0 +1,122 @@
+---
+title: "Python or TypeScript: Picking Your ElevenLabs SDK"
+description: "SDK walkthrough — installing, authenticating, streaming TTS, handling voice design, websocket support. Side-by-side code samples in both languages."
+pubDate: "Apr 27 2026"
+heroImage: "../../assets/blog-placeholder-4.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Both SDKs work. The question is which one fits the project you're already building. Here's a practical comparison so you can pick and move on.
+
+
+<Video src="/resources/elevenlabs-lines-animated.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Installing and Authenticating](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Setup is painless in both languages. One package, one API key, done.
+
+**Python**
+```python
+pip install elevenlabs
+```
+
+```python
+from elevenlabs.client import ElevenLabs
+
+client = ElevenLabs(api_key="YOUR_API_KEY")
+```
+
+**TypeScript**
+```bash
+npm install elevenlabs
+```
+
+```typescript
+import ElevenLabs from "elevenlabs";
+
+const client = new ElevenLabs(api_key: "YOUR_API_KEY");
+```
+
+Store your key in an environment variable rather than hardcoding it. Both SDKs will pick up `ELEVENLABS_API_KEY` automatically if you set it, so you can skip passing it explicitly.
+
+## [Streaming Text-to-Speech](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Streaming matters when you want audio to start playing before the full clip is generated. Useful for chatbots, voice assistants, anything latency-sensitive.
+
+**Python**
+```python
+audio_stream = client.text_to_speech.convert_as_stream(
+    voice_id="VOICE_ID",
+    text="Hello from Python.",
+    model_id="eleven_turbo_v2"
+)
+
+for chunk in audio_stream:
+    # write chunk to file or pipe to audio output
+    pass
+```
+
+**TypeScript**
+```typescript
+const audioStream = await client.textToSpeech.convertAsStream(
+    "VOICE_ID",
+    text: "Hello from TypeScript.",
+    modelId: "eleven_turbo_v2"
+);
+
+for await (const chunk of audioStream) \{
+    // handle chunk
+\}
+```
+
+The turbo model keeps latency low. If you need the highest quality and can wait a bit longer, swap in `eleven_multilingual_v2`.
+
+## [Voice Design and WebSocket Support](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+[ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) lets you generate custom voices from a text prompt using the Voice Design feature. Both SDKs expose this through the same endpoint.
+
+**Python**
+```python
+voice = client.text_to_voice.create_previews(
+    voice_description="A calm, deep narrator voice",
+    text="This is a preview of the generated voice."
+)
+```
+
+**TypeScript**
+```typescript
+const voice = await client.textToVoice.createPreviews(
+    voiceDescription: "A calm, deep narrator voice",
+    text: "This is a preview of the generated voice."
+);
+```
+
+For real-time use cases, both SDKs support WebSockets. The Python SDK uses an async context manager; TypeScript leans on its native async iterator pattern. The underlying connection behavior is the same — you open a socket, send text, and receive audio chunks as they arrive.
+
+**Python WebSocket sketch**
+```python
+async with client.text_to_speech.stream_websocket(voice_id="VOICE_ID") as ws:
+    await ws.send("Your text here")
+    async for chunk in ws:
+        pass
+```
+
+**TypeScript WebSocket sketch**
+```typescript
+const ws = await client.textToSpeech.streamWebsocket("VOICE_ID");
+await ws.send("Your text here");
+for await (const chunk of ws) \{
+    // handle audio chunk
+\}
+```
+
+## [Which One Should You Choose](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+If your project is Python-first — ML pipelines, FastAPI backends, scripting — stay in Python. The SDK is mature and the async support is solid.
+
+If you're building a Node backend, a Next.js app, or anything in the JavaScript ecosystem, TypeScript is the cleaner fit. Type safety helps when you're handling streaming responses and don't want runtime surprises.
+
+The feature parity between both SDKs is close enough that this decision should come down to your existing stack, not the SDK itself. Pick the one that causes less context switching.
+
+Ready to start building? [Sign up for ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and grab your API key to follow along with the examples above.

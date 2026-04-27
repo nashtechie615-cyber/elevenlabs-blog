@@ -311,7 +311,8 @@
       "angle": "Marketing workflow: one English script, voice-matched localization across every target market. Brand voice consistency, time-to-launch, cost model.",
       "hero": "blog-placeholder-3.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-27T05:00:20.464Z"
     },
     {
       "slug": "developer-sdks-python-typescript",
@@ -320,7 +321,8 @@
       "angle": "SDK walkthrough — installing, authenticating, streaming TTS, handling voice design, websocket support. Side-by-side code samples in both languages.",
       "hero": "blog-placeholder-4.jpg",
       "video": "elevenlabs-lines-animated.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-27T05:00:37.843Z"
     },
     {
       "slug": "open-source-ui-components",
@@ -329,7 +331,8 @@
       "angle": "The open-source UI kit for building audio and agent interfaces. What's inside, how to drop it into React/Next/Astro projects.",
       "hero": "blog-placeholder-5.jpg",
       "video": "v3-logo-colourful.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-27T05:00:57.111Z"
     },
     {
       "slug": "scale-audiobook-catalog",
