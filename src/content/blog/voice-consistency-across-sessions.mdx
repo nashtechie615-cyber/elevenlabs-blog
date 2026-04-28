@@ -1,0 +1,52 @@
+---
+title: "Lock Your Voice: Getting Consistent Output Across Months of Production"
+description: "Seeding, voice settings, version pinning. How to make sure the narrator in Chapter 20 matches the narrator in Chapter 1 even when you generate six months apart."
+pubDate: "Apr 28 2026"
+heroImage: "../../assets/eleven-v3-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Six months is a long time. Models get updated, default settings drift, and the voice that felt perfect in January can sound subtly different by July — slightly different pacing, a different emotional register, a breath pattern you don't remember choosing. If you're producing a long-form audiobook, a podcast series, or any multi-chapter project, that drift is a real problem. Here's how to prevent it.
+
+
+<Video src="/resources/v3-logo-colourful.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Document Every Setting Before You Generate a Single File](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The most common mistake is treating a voice as a fixed thing when it isn't. [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) allows you to tune several parameters per generation: stability, similarity boost, style, and speaker boost. These are not cosmetic. Moving stability from 0.5 to 0.7 produces a measurably different narrator — more monotone, less expressive. Moving it the other way gets you something warmer but less consistent.
+
+Before you generate Chapter 1, write down every number. Keep a plain text file or a spreadsheet. Include:
+
+- Voice name and voice ID
+- Model version
+- Stability value
+- Similarity boost value
+- Style value
+- Speaker boost on or off
+
+That document is your production spec. Treat it like a technical rider. Every session starts by loading those exact settings before anything else.
+
+## [Pin the Model Version and Don't Let It Auto-Update](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+ElevenLabs periodically releases new model versions. The newer model is usually better in a general sense — more natural, more expressive. But "better" in the abstract can mean "different" in practice, and different is exactly what you're trying to avoid mid-project.
+
+When you start a project, note which model you're using. If you access the API, pass the model ID explicitly rather than using a generic alias that resolves to whatever is current. Something like `eleven_turbo_v2_5` is a pinned reference. An alias like "latest" is not. Lock it down.
+
+If you're working in the web interface rather than the API, check the model selector each session. Don't assume it remembered your last choice.
+
+## [Use a Seed Clip for Blind Matching](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Even with all settings documented, ears drift too. After a long break, you may not accurately remember what the narrator sounded like. The fix is simple: save one generated audio clip — a full paragraph, not just a sentence — from early in the project as a reference file.
+
+Before you generate any new chapter, play that reference clip. Listen for the texture, the pacing, the emotional baseline. Then run a short test generation of a few lines and compare them directly. If something feels off, check your settings against your spec document. Usually it's a slider that got bumped.
+
+This is especially useful if you're handing the project to another editor or picking it back up after other work displaced your memory of the voice.
+
+## [Keep a Generation Log for Every Session](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Consistency problems are almost always easier to fix when you know exactly when they started. A generation log doesn't need to be complicated. A text file with the date, the chapter range generated, and any setting changes is enough.
+
+If Chapter 15 sounds different from Chapter 14, a log tells you whether you changed anything between sessions. If you didn't change anything, the culprit is probably a model update or an accidental setting reset. Either way, you have a place to start.
+
+Long productions are an investment. A few minutes of documentation per session protects months of work. Get the settings right, lock them down, and start building that reference library on [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) today.

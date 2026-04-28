@@ -341,7 +341,8 @@
       "angle": "Publisher workflow: batch processing backlist titles into audio with consistent narrators, QA steps, distribution to Audible/Apple Books. The economics.",
       "hero": "audiobooks-hero.jpg",
       "video": "audiobooks-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-28T05:00:24.749Z"
     },
     {
       "slug": "prompt-engineering-for-voice",
@@ -350,7 +351,8 @@
       "angle": "How to prompt Voice Design — age, accent, pitch, texture, pacing, emotional register, reference archetypes. A working glossary of terms that get results.",
       "hero": "voice-design-hero.png",
       "video": "spy-voice-design-demo.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-28T05:00:47.382Z"
     },
     {
       "slug": "voice-consistency-across-sessions",
@@ -359,7 +361,8 @@
       "angle": "Seeding, voice settings, version pinning. How to make sure the narrator in Chapter 20 matches the narrator in Chapter 1 even when you generate six months apart.",
       "hero": "eleven-v3-hero.jpg",
       "video": "v3-logo-colourful.mp4",
-      "status": "queued"
+      "status": "published",
+      "publishedAt": "2026-04-28T05:01:09.164Z"
     },
     {
       "slug": "ai-voice-for-small-youtubers",
