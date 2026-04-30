@@ -1,0 +1,43 @@
+---
+title: "Your Voice Agent Needs a Test Suite — Here's How to Build One"
+description: "Agent Testing feature: simulating conversations before deployment, regression tests, scoring behaviors, catching drift. Why this is the missing half of voice agent ops."
+pubDate: "Apr 30 2026"
+heroImage: "../../assets/agents-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Most teams building voice agents spend weeks tuning prompts and personalities, then ship into production and cross their fingers. That's not a workflow — it's a gamble. The agents that hold up over time aren't the ones with the cleverest prompts. They're the ones backed by a test suite that catches problems before users do.
+
+Here's how to build one using [ElevenLabs' Agent Testing tools](https://try.elevenlabs.io/8jq9xhb1mno4).
+
+
+<Video src="/resources/v3-logo-black.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What Agent Testing Actually Does](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The core idea is simple: instead of manually calling your agent and listening to responses, you simulate full conversations automatically. You define a test scenario — a user goal, a set of turns, edge cases — and the platform runs through it, scoring how your agent performed.
+
+This matters because voice agents aren't static. You update a prompt, tweak a knowledge base, adjust a tool call. Any one of those changes can break something downstream. Without automated tests, you often don't find out until a real user hits the broken path.
+
+Agent Testing lets you define expected behaviors at the conversation level. Did the agent stay on topic? Did it complete the task? Did it handle an ambiguous request gracefully? You set the criteria. The system tells you whether the agent met them.
+
+## [Building Your First Regression Suite](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Start with the conversations that matter most. For most agents, that means the happy path — the exact sequence of turns a successful user would take. Write that out as a test case. Run it. Lock in the expected score.
+
+Then add the edge cases. What happens when a user gives a partial answer? What if they go off-script entirely? What if they ask something outside the agent's scope? Each of these becomes a test. Over time, your suite starts to look like a real map of how your agent gets used.
+
+When you update the agent — new instructions, different voice, revised tools — run the full suite before touching production. If scores drop, you know exactly where to look. That's the point. Regression testing turns vague anxiety into specific diagnostics.
+
+## [Catching Drift Before It Becomes a Problem](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Drift is subtle. An agent that worked well three months ago may behave differently today because the underlying model changed, or because accumulated prompt edits created unintended interactions. It rarely announces itself.
+
+A test suite running on a schedule catches drift early. You're not waiting for user complaints or call monitoring flags. You're comparing current behavior against a known-good baseline, automatically. When something shifts, you get the signal before it compounds.
+
+This is the missing half of [voice agent operations](https://try.elevenlabs.io/8jq9xhb1mno4). Most teams have deployment figured out. Few have systematic ways to verify that what they deployed keeps working the way they intended.
+
+Fix that gap before it costs you.
+
+If you haven't looked at what's possible with ElevenLabs' testing and simulation tools yet, [start here](https://try.elevenlabs.io/8jq9xhb1mno4). Building the suite takes an afternoon. The payoff runs as long as your agent does.

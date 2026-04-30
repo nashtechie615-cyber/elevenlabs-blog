@@ -1,0 +1,40 @@
+---
+title: "Eleven Music API Is Live — Here's What You Can Build With It"
+description: "The Music API endpoint. Request format, streaming support, genre/mood prompts, length controls, commercial licensing. Build ideas."
+pubDate: "Apr 30 2026"
+heroImage: "../../assets/blog-placeholder-4.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+ElevenLabs just opened up its Music API to developers, and it does more than generate background loops. You can now hit a single endpoint, pass a text prompt describing genre, mood, instrumentation, and duration, and get back a full audio track — streamed or returned as a complete file. That's a meaningful shift for anyone building apps that need original music without a licensing headache.
+
+
+<Video src="/resources/elevenlabs-lines-animated.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What the API Actually Does](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The endpoint accepts a prompt-based request. You describe what you want — something like "upbeat lo-fi hip hop with warm piano, 90 BPM, relaxed study mood" — and the model handles the rest. You can control approximate track length, which matters when you're generating music that needs to fit a specific scene or content slot.
+
+Streaming is supported, so you don't have to wait for the full track to finish generating before playback starts. For real-time applications or anything where latency is visible to the user, that's a practical advantage over batch-only approaches.
+
+The output is a clean audio file. No watermarks in the commercial tier. The tracks generated through [ElevenLabs Music API](https://try.elevenlabs.io/8jq9xhb1mno4) come with commercial licensing attached, which means you can use them in products, videos, podcasts, or client work without negotiating rights separately.
+
+## [Prompt Parameters Worth Knowing](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Genre and mood descriptors do the heavy lifting here. The model responds well to specific language — naming an instrument, a tempo feel, or an emotional tone gets you closer to a usable result than vague prompts. Think "melancholic acoustic guitar, fingerpicked, slow tempo" rather than just "sad music."
+
+Length control is coarse rather than sample-precise, but for most use cases — short video clips, app onboarding screens, podcast intros — the available range covers what you need. If you need exact timing down to the millisecond, you'll still want a DAW in the loop. But for programmatic generation at scale, this is workable.
+
+## [What You Can Actually Build](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+A few practical directions:
+
+- **Video tools** — Auto-generate background music matched to a video's mood or category without touching a music library.
+- **Podcast platforms** — Let creators generate a custom intro track in seconds instead of hunting royalty-free sites.
+- **Games and apps** — Dynamically generate ambient music that adapts to in-app states or user preferences.
+- **Content automation pipelines** — Pair the Music API with the voice API to produce fully narrated, scored audio content end to end.
+
+The commercial license is the part that makes most of these actually viable for production use. Without it, you're back to clearing rights or using library music.
+
+If you're building anything in the audio or video space and want to cut the music licensing problem out entirely, [start here](https://try.elevenlabs.io/8jq9xhb1mno4) and run a few test prompts. The API is live and the barrier to a first track is low.

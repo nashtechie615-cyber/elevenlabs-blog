@@ -1,0 +1,42 @@
+---
+title: "Every Product Page Can Now Have a Human Walkthrough"
+description: "E-commerce use case: generating a 30-second human-sounding walkthrough for every SKU. Conversion lift stories. API workflow."
+pubDate: "Apr 30 2026"
+heroImage: "../../assets/blog-placeholder-3.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Most product pages do the same thing: a few photos, a bullet list of specs, maybe a review section. That's been the standard for twenty years. But there's a gap between reading a feature list and actually understanding what a product does — and that gap costs conversions. Audio walkthroughs close it. Not podcast-style interviews or brand videos that take weeks to produce. Just a clear, human-sounding voice explaining what the thing is and why it matters, running for about thirty seconds, right on the page.
+
+
+<Video src="/resources/elevenlabs-lines-animated.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Why Audio Works Where Text Doesn't](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Reading takes effort. Listening doesn't. When a shopper lands on a product page, they're already doing a dozen things at once. A short audio walkthrough meets them where they are — it doesn't ask them to parse a paragraph, it just talks to them.
+
+The other factor is trust. A human-sounding voice carries weight that bullet points don't. It signals that someone thought carefully about this product and wanted to explain it to you directly. That's the feeling a good sales associate creates in a physical store. [ElevenLabs voices](https://try.elevenlabs.io/8jq9xhb1mno4) can replicate that feeling at scale, across an entire catalog.
+
+## [The API Workflow for Catalog-Scale Audio](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The practical question is how you generate a walkthrough for every SKU without turning it into a manual project. The answer is templating plus the ElevenLabs API.
+
+Here's a straightforward approach:
+
+1. Pull your product data — name, key features, use case, and any differentiator — from your catalog database or CMS.
+2. Feed that data into a prompt template that generates a short script. Something like: "PRODUCT_NAME is a CATEGORY built for TARGET_USER. It does KEY_FEATURE_1 and KEY_FEATURE_2. Here's why that matters: BENEFIT."
+3. Send the script to the ElevenLabs text-to-speech endpoint, specifying your chosen VOICE_ID and output format.
+4. Store the returned audio file and attach it to the corresponding product page.
+
+With a well-structured catalog, you can run this pipeline in bulk and generate hundreds of audio files in a single session. Update a product description, re-run the pipeline for that SKU, and the audio updates too.
+
+## [What Conversion Lift Actually Looks Like](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The mechanism is straightforward: shoppers who engage with additional product content are more confident before they buy. Confidence reduces cart abandonment. Audio is a low-friction way to add that engagement without requiring a customer to watch a full video or scroll through a long description.
+
+Teams using this approach report that audio walkthroughs keep shoppers on the page longer and reduce the volume of basic questions hitting customer support — because the walkthrough answers them preemptively. That has downstream effects on support costs and repeat purchase rates.
+
+The format also compounds. A single voice, used consistently across a catalog, starts to feel like a brand. Customers recognize it. That consistency is hard to build with video but easy to maintain with [generated audio](https://try.elevenlabs.io/8jq9xhb1mno4).
+
+If your product catalog has more than a handful of SKUs and you're not using audio on those pages yet, this is a straightforward place to start. Build the pipeline once and it runs every time your catalog changes. Try it at [try.elevenlabs.io](https://try.elevenlabs.io/8jq9xhb1mno4).
