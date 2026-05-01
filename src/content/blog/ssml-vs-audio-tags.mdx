@@ -1,0 +1,42 @@
+---
+title: "SSML vs Audio Tags: Why One Replaces the Other"
+description: "For developers migrating from Google TTS or Polly — why audio tags are simpler, more expressive, and what the one-to-one mapping looks like."
+pubDate: "May 01 2026"
+heroImage: "../../assets/blog-placeholder-5.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+If you've spent any time wiring up Google Text-to-Speech or Amazon Polly, you know the SSML drill. Wrap everything in `<speak>` tags. Scatter `<prosody>` attributes across your text. Add `<break>` elements wherever you need a pause. It works, but the markup gets verbose fast, and the mental overhead of remembering attribute syntax slows you down. ElevenLabs takes a different approach entirely — one that's worth understanding before you migrate.
+
+
+<Video src="/resources/v3-logo-colourful.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What SSML Actually Does (and Where It Gets Clunky)](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+SSML is a W3C standard designed to give developers control over speech synthesis. Rate, pitch, volume, pauses, phonemes — it covers a lot of ground. The problem is that it was designed around rule-based TTS engines, not neural or generative models. When you write `<prosody rate="slow" pitch="-2st">`, you're fighting the engine to do something the underlying model may not handle gracefully.
+
+The other issue is readability. A sentence like "Take a deep breath" becomes a small XML document once you add SSML decoration. Anyone reading your prompts or templates later has to mentally parse the tags away to understand what the voice is actually saying. That friction compounds across a large project.
+
+## [How ElevenLabs Audio Tags Work Instead](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+ElevenLabs uses a lighter syntax built around what the model actually understands. Instead of XML attributes, you use short inline tags that map to expressive directions — things like `<laugh>`, `<sigh>`, or `<break time="1.5s">`. The tags feel closer to stage directions than markup language.
+
+Here's a rough one-to-one mapping for common SSML patterns:
+
+- `<break time="500ms">` in SSML → `<break time="0.5s">` in ElevenLabs audio tags. Nearly identical, but the ElevenLabs version doesn't require an enclosing `<speak>` root.
+- `<prosody rate="fast">` in SSML → There's no direct rate tag, because the generative model interprets pacing from context and voice settings rather than hard parameters.
+- `<say-as interpret-as="characters">` → Not needed in the same way. ElevenLabs models handle abbreviations and formatting more naturally, so you spend less time forcing interpretation.
+- Emotion and tone, which SSML handles poorly, become `<emotion>` style tags or are guided through [prompt-level direction](https://try.elevenlabs.io/8jq9xhb1mno4) in ElevenLabs.
+
+## [What This Means for a Migration](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The practical impact depends on how much SSML you've accumulated. If your integration is mostly pauses and basic breaks, the migration is close to a find-and-replace. Strip the `<speak>` wrapper, adjust the break syntax, and you're largely done.
+
+Where it gets more interesting is everywhere you've been using SSML as a workaround — cramming prosody tags in because the engine wouldn't convey urgency or warmth on its own. In ElevenLabs, you often get that expressiveness without tags at all, just by choosing the right voice and writing naturally. The markup you were using defensively becomes unnecessary.
+
+That said, audio tags do have their own conventions to learn. The `<break>` element behavior, supported tag types, and how tags interact with voice settings are worth reading through in the [official documentation](https://try.elevenlabs.io/8jq9xhb1mno4) before you go too deep.
+
+The short version: SSML was the best tool available for its era. Audio tags are designed for a different class of engine, and the simpler syntax reflects that. If you're already moving to ElevenLabs for voice quality, the tag system is a genuine upgrade — not just a different flavor of the same thing.
+
+Ready to test it yourself? [Try ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and run your first audio tag request in minutes.

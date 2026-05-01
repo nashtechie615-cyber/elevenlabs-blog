@@ -1,0 +1,43 @@
+---
+title: "The Three Ethical Guardrails Every Voice Cloning Project Should Have"
+description: "Consent, attribution, and reversibility — the framework that keeps voice cloning projects on the right side of trust. How ElevenLabs operationalizes this with voice captcha and the terms of use."
+pubDate: "May 01 2026"
+heroImage: "../../assets/blog-placeholder-1.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Voice cloning is powerful enough to be genuinely dangerous if it's handled carelessly. The same technology that lets a YouTuber narrate videos in ten languages or helps someone who lost their voice communicate again can also be used to impersonate, deceive, or harm. The difference between those outcomes isn't the technology itself — it's the guardrails around how it gets built and deployed.
+
+Three principles hold up most serious conversations about responsible voice cloning: consent, attribution, and reversibility. Get all three right and you have a framework that earns trust. Miss any one of them and you have a liability.
+
+
+<Video src="/resources/v3-logo-black.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [Consent Is the Foundation, Not a Checkbox](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Consent means the person whose voice is being cloned understands what they're agreeing to and actively chooses it. Not buried-in-the-terms consent. Real, informed agreement.
+
+[ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) operationalizes this through a voice captcha system for Professional Voice Clones. Before a voice is cloned, the person providing the voice sample has to read a specific verification phrase aloud. That phrase confirms they're a real person who is present and agreeing to the cloning process in that moment. It's a small friction point with a large purpose — it makes passive or accidental consent structurally impossible.
+
+For anyone building on top of the platform, that mechanism is a signal worth studying. If your own product involves voice cloning, the question isn't just "did we get permission?" It's "does the process itself make meaningful consent unavoidable?"
+
+## [Attribution Keeps the Record Honest](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Attribution means the synthetic voice is traceable — back to the person it belongs to and back to the context it was created for. This matters because voices travel. Audio clips get shared, repurposed, and stripped of context. Without attribution baked in, there's no way to distinguish legitimate use from misuse after the fact.
+
+ElevenLabs' terms of use restrict how cloned voices can be deployed and who can access them. Creators who build a cloned voice don't automatically get permission to use it in every conceivable context — the scope matters. That's attribution working as a structural constraint, not just a policy paper.
+
+## [Reversibility Gives People a Way Out](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Consent given today should be revocable. People change their minds. Circumstances change. A voice actor who agreed to clone their voice for one project shouldn't be locked into that decision permanently.
+
+Reversibility means the system has to support deletion — of the voice model, of stored samples, of the associated outputs where technically possible. It also means the process for requesting removal should be straightforward, not buried or adversarial.
+
+This is the guardrail that most platforms underinvest in because it looks like a support cost rather than a product feature. It isn't. It's the mechanism that makes the entire consent framework credible over time. A promise you can't undo isn't really a promise.
+
+---
+
+These three principles aren't unique to voice cloning — they're the same logic that governs good data practices generally. But voice is personal in a way that text and images often aren't. People recognize their own voice. Their families recognize it. Getting this wrong doesn't just create legal exposure; it damages something harder to repair than a brand.
+
+If you're building with synthetic audio and want to see how a platform has tried to make these guardrails concrete, [start here](https://try.elevenlabs.io/8jq9xhb1mno4).

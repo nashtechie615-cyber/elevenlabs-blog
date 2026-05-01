@@ -1,0 +1,43 @@
+---
+title: "The Agent Analytics View That Tells You Where Your Bot Is Losing"
+description: "Analytics dashboard for voice agents: drop-off points, sentiment, success rate, handoff reasons. How to use it to iterate toward a 90%+ resolution rate."
+pubDate: "May 01 2026"
+heroImage: "../../assets/agents-hero.jpg"
+---
+
+import Video from '../../components/Video.astro';
+
+Most voice agent deployments fail quietly. Not with errors or crashes — just with users hanging up, giving one-word answers, or asking to speak to a human. If you're not watching the right numbers, you'll never know why.
+
+ElevenLabs has an analytics view built into the conversational AI dashboard that surfaces exactly this kind of signal. Here's how to read it and what to do about what you find.
+
+
+<Video src="/resources/v3-logo-black.mp4" caption="See ElevenLabs in action." ratio="16/9" />
+
+## [What the Dashboard Actually Shows](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+The analytics view tracks conversations at the session level. You get resolution rate, average session length, sentiment scores, handoff triggers, and — critically — the points in a conversation where users drop off or go silent.
+
+That drop-off data is the most underused metric in the whole view. It tells you which prompt, which question, or which response type is causing users to disengage. A spike in drop-offs after your agent asks for an account number, for example, usually means the phrasing feels too abrupt or the user doesn't know what format to use.
+
+Sentiment tracking runs through each session and flags turns where the user's tone shifted negative. This isn't just a nice-to-have — it's a debugging tool. Negative sentiment that appears consistently at the same point in the flow is a sign that something in your agent's logic or language is landing wrong.
+
+## [Reading Handoff Reasons Without Getting Defensive](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Handoffs to a human agent aren't failures by default. But the reasons behind them matter. ElevenLabs logs why a handoff was triggered — whether the agent hit a confidence threshold, the user explicitly requested a human, or the conversation exceeded a set turn limit.
+
+When you sort handoffs by reason, patterns show up fast. If most handoffs are user-requested, your agent probably sounds uncertain or is struggling with a specific topic. If most are confidence-based, your knowledge base has gaps. Both are fixable, but you fix them differently.
+
+[Reviewing handoff transcripts](https://try.elevenlabs.io/8jq9xhb1mno4) alongside the reason codes gives you the context to make targeted changes — not just broad rewrites that might break what's already working.
+
+## [The Path to 90%+ Resolution](https://try.elevenlabs.io/8jq9xhb1mno4)
+
+Getting to a 90% or better resolution rate isn't a one-time optimization. It's a loop. You ship a version, let it run, pull the analytics, fix the two or three worst drop-off or sentiment patterns, and repeat.
+
+The teams that hit high resolution rates tend to focus on one metric at a time. Pick the highest-volume drop-off point. Write a cleaner prompt. Re-deploy. Check if it moved. That discipline compounds quickly.
+
+It also helps to treat the sentiment view as a second opinion on changes you think went well. Sometimes a rephrased response improves resolution but worsens sentiment — which means users are completing the flow but leaving frustrated. Both numbers need to move in the right direction.
+
+The analytics view won't tell you what to say. But it will tell you exactly where your current version is breaking down. That's the information you need to iterate toward something that actually works.
+
+Start digging into your agent's performance data at [ElevenLabs](https://try.elevenlabs.io/8jq9xhb1mno4) and find out where your conversations are actually ending.
